@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 8060191633041156103}
   - component: {fileID: 8060191633041156096}
   - component: {fileID: 8060191633041156097}
+  - component: {fileID: 1974523639}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -180,6 +181,24 @@ MonoBehaviour:
   playerSpeed: 5
   moveLeft: 6100000014010000
   moveRight: 6400000013010000
+  weld: 
+--- !u!114 &1974523639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8060191633041156099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b917b0e57938345a7d1c4b800f1b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curve: {fileID: 0}
+  curveMath: {fileID: 0}
+  player: {fileID: 8060191633041156097}
+  threshold: 5
+  isNearCurve: 0
 --- !u!1001 &8713633164938000684
 PrefabInstance:
   m_ObjectHideFlags: 0
