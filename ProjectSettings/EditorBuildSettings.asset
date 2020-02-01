@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mark Scene.unity
     guid: 59250fcb8d4394a378e7c31817d835b2
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 6eedcf0eb29034b4a805f967130dbb95
   m_configObjects: {}
