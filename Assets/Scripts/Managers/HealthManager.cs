@@ -9,13 +9,12 @@ public class HealthManager : MonoBehaviour
 
     [SerializeField] private GameObject SliderBar;
     private RectTransform sliderBarRect;
-    private float sliderBarWidth;
+    private float sliderBarMaxWidth;
     private float sliderBarHeight;
     private float sliderBarNewWidth;
-    private float sliderBarNewHeight;
 
     [SerializeField] private float maxHealth;
-    private float health;
+    private float currentHealth;
     private bool losingHealth;
     [SerializeField] private float loseHealthAmount;
     [SerializeField] private float loseHealthTimeInterval;
@@ -37,10 +36,12 @@ public class HealthManager : MonoBehaviour
         }
 
         sliderBarRect = SliderBar.GetComponent<RectTransform>();
-        sliderBarWidth = sliderBarRect.rect.width;
+        sliderBarMaxWidth = sliderBarRect.rect.width;
         sliderBarHeight = sliderBarRect.rect.height;
 
-        losingHealth = true;
+        currentHealth = maxHealth;
+        losingHealth = false;
+        loseHealthTimeRef = Time.time;
     }
 
     private void OnEnable()
@@ -70,8 +71,16 @@ public class HealthManager : MonoBehaviour
 
     private void LoseHealth()
     {
-        health -= loseHealthAmount;
-        sliderBarRect.sizeDelta = new Vector2();
+        currentHealth -= loseHealthAmount;
+        if(currentHealth > 0)
+        {
+            sliderBarNewWidth = (currentHealth / maxHealth) * sliderBarMaxWidth;
+            sliderBarRect.sizeDelta = new Vector2(sliderBarNewWidth, sliderBarHeight);
+        }
+        else
+        {
+            OnDeath?.Invoke();
+        }
     }
    
 

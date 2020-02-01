@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,18 +12,43 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private KeyCode[] moveLeft;
     [SerializeField] private KeyCode[] moveRight;
+    [SerializeField] private KeyCode[] weld;
 
     private Vector3 startPosition;
     private Vector3 nextPosition;
     private Vector3 moveDir; //What direction the player is trying to move in
+
+    private bool canControlPlayer; //Whether the player can control the player character
+
+    public static Action OnWeldStart;
+    public static Action OnWeldStop;
 
     private void Awake()
     {
         startPosition = transform.position;
     }
 
+    private void OnEnable()
+    {
+        OnWeldStart += HandleWeldStart;
+        OnWeldStop += HandleWeldStop;
+        HealthManager.OnDeath += HandleDeath;
+    }
+
+    private void OnDisable()
+    {
+        OnWeldStart -= HandleWeldStart;
+        OnWeldStop -= HandleWeldStop;
+        HealthManager.OnDeath -= HandleDeath;
+    }
+
     private void Update()
     {
+        if(canControlPlayer == false)
+        {
+            return;
+        }
+
         for(int i = 0; i < moveLeft.Length; i++)
         {
             if (Input.GetKey(moveLeft[i]))
@@ -40,6 +66,22 @@ public class PlayerController : MonoBehaviour
                 MovePlayer();
             }
         }
+
+        for(int i = 0; i < weld.Length; i++)
+        {
+            if(Input.GetKeyDown(weld[i]))
+            {
+                OnWeldStart?.Invoke();
+            }
+        }
+
+        for (int i = 0; i < weld.Length; i++)
+        {
+            if (Input.GetKeyUp(weld[i]))
+            {
+                OnWeldStop?.Invoke();
+            }
+        }
     }
 
     private void MovePlayer()
@@ -52,4 +94,28 @@ public class PlayerController : MonoBehaviour
 		}
     }
 
+    private void HandleWeldStart()
+    {
+
+    }
+
+    private void HandleWeldStop()
+    {
+
+    }
+
+    private void HandleDeath()
+    {
+        DisablePlayerController();
+    }
+
+    private void EnablePlayerController()
+    {
+        canControlPlayer = true;
+    }
+
+    private void DisablePlayerController()
+    {
+        canControlPlayer = false;
+    }
 }
