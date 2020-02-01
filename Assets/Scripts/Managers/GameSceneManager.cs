@@ -26,22 +26,22 @@ public class GameSceneManager : MonoBehaviour
 
     private void OnEnable()
     {
-        MainMenuManager.OnGameStart += HandleGameStart;
+        MenuManager.OnGameStart += HandleGameStart;
     }
 
     private void OnDisable()
     {
-        MainMenuManager.OnGameStart -= HandleGameStart;
+        MenuManager.OnGameStart -= HandleGameStart;
     }
 
     private void HandleMenu()
     {
-        LoadScene(menuSceneName);
+        //LoadScene(menuSceneName);
     }
 
     private void HandleGameStart()
     {
-        LoadScene(gameSceneName);
+        //LoadScene(gameSceneName);
     }
 
     private void LoadScene(string nextSceneName)

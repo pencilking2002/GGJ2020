@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     private bool canControlPlayer; //Whether the player can control the player character
 
+    private bool isWelding;
+
     public static Action OnWeldStart;
     public static Action OnWeldStop;
 
@@ -97,12 +99,17 @@ public class PlayerController : MonoBehaviour
 
     private void HandleWeldStart()
     {
+        isWelding = true;
+    }
 
+    public bool IsPlayerWelding()
+    {
+        return isWelding;
     }
 
     private void HandleWeldStop()
     {
-
+        isWelding = false;
     }
 
     private void HandleDeath()

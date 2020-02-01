@@ -7,6 +7,9 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
 
+    public GameObject mainMenu;
+    public GameObject gameMenu;
+
     public static Action OnGameStart;
 
     private void Awake()
@@ -35,11 +38,13 @@ public class MenuManager : MonoBehaviour
 
     public void HandleStartButton()
     {
+        Debug.Log("Start button pressed");
         OnGameStart?.Invoke();
     }
 
     private void HandleGameStart()
     {
-        
+        mainMenu.SetActive(false);
+        gameMenu.SetActive(true);
     }
 }
