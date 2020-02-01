@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &189176202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4688145296798209541, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+    type: 3}
+  m_PrefabInstance: {fileID: 1511399153}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &338053909
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,15 +161,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7790694932570900591}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1043639005 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1768333139689870595, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+--- !u!1 &903649579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4688145295161650881, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
     type: 3}
   m_PrefabInstance: {fileID: 1511399153}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1426014829 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7253373043870297466, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+--- !u!224 &1043639005 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1768333139689870595, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
     type: 3}
   m_PrefabInstance: {fileID: 1511399153}
   m_PrefabAsset: {fileID: 0}
@@ -178,7 +184,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameMenu
       value: 
-      objectReference: {fileID: 1969722055}
+      objectReference: {fileID: 903649579}
     - target: {fileID: 1768333139689870592, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
         type: 3}
       propertyPath: m_Name
@@ -289,10 +295,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7253373042235823550, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+    - target: {fileID: 4688145295161650881, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3bc1e6cd46e74cd998cd9c1605e3a77, type: 3}
@@ -396,12 +402,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1969722055 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7253373042235823550, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
-    type: 3}
-  m_PrefabInstance: {fileID: 1511399153}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2058351857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8060191633041156098, guid: d289a58f73c494cec96a1dc72eb5b32b,
@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd545b7e1c8f4a5f9cc2df2d16026a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SliderBar: {fileID: 1426014829}
+  SliderBar: {fileID: 189176202}
   maxHealth: 100
   loseHealthAmount: 5
   loseHealthTimeInterval: 1
