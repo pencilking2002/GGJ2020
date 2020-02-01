@@ -4,18 +4,46 @@ using UnityEngine;
 
 public class ScrollingManager : MonoBehaviour
 {
-    public GameObject[] modules;
+    public Collider[] modules;
     public float scrollSpeed = 5.0f;
+    public float cutoffPointY = 15.0f;
     public Camera cam;
 
 
     private void Update()
     {
-        var cutoffPoint = cam.ScreenToWorldPoint(new Vector3(0.5f, cam.pixelHeight, 10));
+        //var cutoffPoint = cam.ScreenToWorldPoint(new Vector3(0.5f, cam.pixelHeight, 10));
         for(int i=0; i<modules.Length; i++)
         {
-            //if (modules[i].transform.)
-            modules[i].transform.localPosition += new Vector3(0,scrollSpeed * Time.deltaTime,0);
+            var module = modules[i];
+            if (module.bounds.min.y > cutoffPointY)
+            {
+                Collider deepestModule = GetDeepestModule();
+                var offset = deepestModule.bounds.min.y-module.bounds.extents.y;
+                var pos = module.transform.localPosition;
+                pos.y = offset - transform.position.y;
+                module.transform.localPosition = pos;
+            }
         }
+
+        this.transform.position += new Vector3(0,scrollSpeed * Time.deltaTime,0);
+    }
+
+    private Collider GetDeepestModule()
+    {
+        float deepestPoint = 10000;
+        Collider deepestCollider = null;
+
+        for(int i=0; i<modules.Length; i++)
+        {
+            Collider module = modules[i];
+            if (module.transform.position.y < deepestPoint)
+            {
+                deepestPoint = module.transform.position.y;
+                deepestCollider = module;
+            }
+        }
+
+        return deepestCollider;
     }
 }
