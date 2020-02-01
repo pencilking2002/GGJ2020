@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         startPosition = transform.position;
+        canControlPlayer = true;
     }
 
     private void OnEnable()
