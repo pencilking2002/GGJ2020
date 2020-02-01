@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class MainMenuManager : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
-    public static MainMenuManager Instance;
+    public static MenuManager Instance;
 
     public static Action OnGameStart;
 
@@ -40,6 +40,6 @@ public class MainMenuManager : MonoBehaviour
 
     private void HandleGameStart()
     {
-
+        
     }
 }
