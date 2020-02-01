@@ -12,13 +12,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private KeyCode[] moveLeft;
     [SerializeField] private KeyCode[] moveRight;
 
-    private Transform startPosition;
-    private Transform nextPostion;
+    private Vector3 startPosition;
+    private Vector3 nextPosition;
     private Vector3 moveDir; //What direction the player is trying to move in
 
     private void Awake()
     {
-
+        startPosition = transform.position;
     }
 
     private void Update()
@@ -44,7 +44,12 @@ public class PlayerController : MonoBehaviour
 
     private void MovePlayer()
     {
-        transform.position += moveDir * playerSpeed * Time.deltaTime;
+        nextPosition = transform.position + (moveDir * playerSpeed * Time.deltaTime);
+
+		if(nextPosition.x > leftLimit.position.x && nextPosition.x < rightLimit.position.x)
+		{
+			transform.position = nextPosition;
+		}
     }
 
 }
