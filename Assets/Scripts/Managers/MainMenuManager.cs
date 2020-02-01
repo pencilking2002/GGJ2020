@@ -33,7 +33,7 @@ public class MainMenuManager : MonoBehaviour
         OnGameStart -= HandleGameStart;
     }
 
-    private void HandleStartButton()
+    public void HandleStartButton()
     {
         OnGameStart?.Invoke();
     }

@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b89ffb878aa4d1faa0f67ae55853f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuSceneName: 
+  gameSceneName: 
 --- !u!1 &708292200565777077
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,8 +142,39 @@ Transform:
   - {fileID: 3183730841518959865}
   - {fileID: 1577164831399168530}
   - {fileID: 7871392614665880611}
+  - {fileID: 4736258138664118932}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2752910131600067832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4736258138664118932}
+  m_Layer: 0
+  m_Name: MeterManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4736258138664118932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2752910131600067832}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 47.89495, y: 1420.6648, z: -30.750036}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1099689104195470398}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5106024153292046161
 GameObject:
@@ -153,6 +186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3183730841518959865}
   - component: {fileID: 6472415973226765566}
+  - component: {fileID: 2013348710998394650}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -175,6 +209,18 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6472415973226765566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5106024153292046161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5c9c2c5e56044b088e7be3d4db9c8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2013348710998394650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

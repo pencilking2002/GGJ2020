@@ -7,8 +7,8 @@ public class GameSceneManager : MonoBehaviour
 {
     public static GameSceneManager Instance;
 
-    public Scene menuScene;
-    public Scene gameScene;
+    public string menuSceneName;
+    public string gameSceneName;
 
     private void Awake()
     {
@@ -36,16 +36,16 @@ public class GameSceneManager : MonoBehaviour
 
     private void HandleMenu()
     {
-        LoadScene(menuScene);
+        LoadScene(menuSceneName);
     }
 
     private void HandleGameStart()
     {
-        LoadScene(gameScene);
+        LoadScene(gameSceneName);
     }
 
-    private void LoadScene(Scene nextScene)
+    private void LoadScene(string nextSceneName)
     {
-        SceneManager.LoadScene(nextScene.name);
+        SceneManager.LoadScene(nextSceneName);
     }
 }
