@@ -51,18 +51,19 @@ public class LineDrawing : MonoBehaviour
             currLine.SetPosition(numPositions-1, pointList[numPositions-1]);
             float vOffset = scrollingManager.scrollSpeed * Time.deltaTime;
 
-            for(int i=0; i<currLine.positionCount; i++)
+            for(int x=0; x<currLine.positionCount; x++)
             {
-                Vector3 linePoint = currLine.GetPosition(i);
+                Vector3 linePoint = currLine.GetPosition(x);
                 linePoint.y += vOffset;
 
-                currLine.SetPosition(i, linePoint);
+                currLine.SetPosition(x, linePoint);
             } 
         }
         else
         {
             if (currLine != null)
             {
+                Destroy(currLine.gameObject);
                 currLine = null;
                 pointList.Clear();
             }
