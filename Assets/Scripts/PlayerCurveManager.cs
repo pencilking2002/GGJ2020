@@ -8,6 +8,8 @@ public class PlayerCurveManager : MonoBehaviour
 {
     public BGCurve curve;
     private BGCcMath curveMath;
+    private List<BGCurve> curves;
+
     public PlayerController player;
     public float threshold = 5.0f;
     public bool isNearCurve;
@@ -15,8 +17,11 @@ public class PlayerCurveManager : MonoBehaviour
     private void Awake()
     {
         curveMath = curve.GetComponent<BGCcMath>();
+        var curveArr = GameObject.FindObjectsOfType<BGCurve>();
+        curves = new List<BGCurve>();
+        curves.AddRange(curveArr);
     }
-    
+
     // private void OnDrawGizmos()
     // {
     //     Gizmos.color = Color.yellow;
