@@ -424,11 +424,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 489721671805384477, guid: 5e05fb41419587f4eaa0cd9c5b596b00,
         type: 3}
-      propertyPath: modules.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 489721671805384477, guid: 5e05fb41419587f4eaa0cd9c5b596b00,
-        type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 534669904}
