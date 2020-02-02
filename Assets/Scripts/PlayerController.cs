@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private bool canControlPlayer; //Whether the player can control the player character
 
-    private bool isWelding;
+    [SerializeField] private bool isWelding;
 
     public static Action OnWeldStart;
     public static Action OnWeldStop;
@@ -71,20 +71,14 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        for(int i = 0; i < weld.Length; i++)
+        if(Input.GetMouseButtonDown(0))
         {
-            if(Input.GetKeyDown(weld[i]))
-            {
-                OnWeldStart?.Invoke();
-            }
+            OnWeldStart?.Invoke();
         }
 
-        for (int i = 0; i < weld.Length; i++)
+        if (Input.GetMouseButtonUp(0))
         {
-            if (Input.GetKeyUp(weld[i]))
-            {
-                OnWeldStop?.Invoke();
-            }
+            OnWeldStop?.Invoke();
         }
     }
 
