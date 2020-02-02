@@ -19,7 +19,7 @@ public class ScrollingManager : MonoBehaviour
             if (module.transform.position.y > cutoffPointY)
             {
                 Collider deepestModule = GetDeepestModule();
-                var offset = deepestModule.bounds.min.y-module.bounds.extents.y;
+                var offset = deepestModule.bounds.min.y-module.bounds.extents.y * 1.33f;
                 var pos = module.transform.localPosition;
                 pos.y = offset - transform.position.y;
                 module.transform.localPosition = pos;
