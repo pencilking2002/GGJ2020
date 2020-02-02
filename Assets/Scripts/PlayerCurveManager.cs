@@ -12,25 +12,25 @@ public class PlayerCurveManager : MonoBehaviour
     public float threshold = 5.0f;
     public bool isNearCurve;
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Vector3 closestPoint = Vector3.zero;
-        closestPoint = curveMath.Math.CalcPositionByClosestPoint(player.transform.position);
-        for(int sIndex=0; sIndex<curveMath.Math.SectionsCount; sIndex++)
-        {
-            for(int i=0; i<curveMath.Math.SectionInfos[sIndex].PointsCount; i++)
-            {
-                Gizmos.DrawSphere(curveMath.Math.SectionInfos[sIndex].Points[i].Position, 1);
-            }
-        }
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.yellow;
+    //     Vector3 closestPoint = Vector3.zero;
+    //     closestPoint = curveMath.Math.CalcPositionByClosestPoint(player.transform.position);
+    //     for(int sIndex=0; sIndex<curveMath.Math.SectionsCount; sIndex++)
+    //     {
+    //         for(int i=0; i<curveMath.Math.SectionInfos[sIndex].PointsCount; i++)
+    //         {
+    //             Gizmos.DrawSphere(curveMath.Math.SectionInfos[sIndex].Points[i].Position, 0.2f);
+    //         }
+    //     }
 
-        if (isNearCurve)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(closestPoint, 1.1f);
-        }
-    }
+    //     if (isNearCurve)
+    //     {
+    //         Gizmos.color = Color.red;
+    //         Gizmos.DrawSphere(closestPoint, 0.25f);
+    //     }
+    // }
 
     private void Update()
     {
