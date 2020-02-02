@@ -17,7 +17,7 @@ public class HealthManager : MonoBehaviour
 
     [SerializeField] private float maxHealth;
     private float currentHealth;
-    private bool losingHealth;
+    public bool losingHealth;
     [SerializeField] private float gainHealthAmount;
     [SerializeField] private float gainHealthTimeInterval;
     private float gainHealthTimeRef;
@@ -84,7 +84,7 @@ public class HealthManager : MonoBehaviour
 
     private bool CheckIsWelding()
     {
-        return  playerController.IsPlayerWelding() && playerCurveManager.isNearCurve;    
+        return  playerController.IsPlayerWelding() && playerCurveManager.isNearCurve;
     }
 
     private void HandleStartLosingHealth()
