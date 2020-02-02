@@ -466,6 +466,11 @@ PrefabInstance:
       propertyPath: pointAddedInterval
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 1877890501620531817, guid: d289a58f73c494cec96a1dc72eb5b32b,
+        type: 3}
+      propertyPath: scrollingManager
+      value: 
+      objectReference: {fileID: 1005626447}
     - target: {fileID: 8060191633041156097, guid: d289a58f73c494cec96a1dc72eb5b32b,
         type: 3}
       propertyPath: leftLimit
@@ -538,6 +543,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
+--- !u!114 &1005626447 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 489721671805384477, guid: 5e05fb41419587f4eaa0cd9c5b596b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 806193977}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e134cfef84cfb4fb16df985281883e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2036267216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -679,11 +696,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LineRenderer
-      objectReference: {fileID: 0}
-    - target: {fileID: 3932076435748605663, guid: 477a9e82a39c2104daccd1c5ea4cdebc,
-        type: 3}
-      propertyPath: m_UseWorldSpace
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 477a9e82a39c2104daccd1c5ea4cdebc, type: 3}
