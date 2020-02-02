@@ -9,9 +9,7 @@ public class PlayerIntroController : MonoBehaviour
     public float fallDistance = 1.0f;
 
     private void StartPlayerIntro()
-    {
-        GameManager.Instance.SetIntroState();
-        
+    {        
         var targetPos = player.transform.position - new Vector3(0,fallDistance,0);
 
         LeanTween.move(player.gameObject, targetPos, playerFallTime)
@@ -20,12 +18,13 @@ public class PlayerIntroController : MonoBehaviour
         });
     }
 
-    private void OnDisable()
+
+    private void OnEnable()
     {
         MenuManager.OnGameStart += StartPlayerIntro;
     }
 
-    private void OnEnable()
+      private void OnDisable()
     {
         MenuManager.OnGameStart -= StartPlayerIntro;
     }
