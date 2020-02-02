@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LineDrawing : MonoBehaviour
 {
+    public ScrollingManager scrollingManager;
     public LineRenderer lrPrefab;
     private LineRenderer _currLine;
     public LineRenderer currLine
@@ -37,12 +38,26 @@ public class LineDrawing : MonoBehaviour
         {
             if (Time.time > pointAddedTime + pointAddedInterval)
             {
-                var worldPoint = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y, 10));
+                var worldPoint = transform.position;
                 pointList.Add(worldPoint);
                 pointAddedTime = Time.time;
             }
+
+            if (pointList.Count == 0)
+                return;
+
             currLine.positionCount = pointList.Count;
-            currLine.SetPositions(pointList.ToArray());   
+            int numPositions = pointList.Count; 
+            currLine.SetPosition(numPositions-1, pointList[numPositions-1]);
+            float vOffset = scrollingManager.scrollSpeed * Time.deltaTime;
+
+            for(int i=0; i<currLine.positionCount; i++)
+            {
+                Vector3 linePoint = currLine.GetPosition(i);
+                linePoint.y += vOffset;
+
+                currLine.SetPosition(i, linePoint);
+            } 
         }
         else
         {
