@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WeldLightController : MonoBehaviour
 {
+    public GameObject weldParticles;
     public Light spotLight;
     public float normalIntensity = 3.0f;
     public float maxflickerIntensity = 5.0f;
@@ -24,11 +25,13 @@ public class WeldLightController : MonoBehaviour
     private void StartFlickering()
     {
         isFlickering = true;
+        weldParticles.SetActive(true);
     }
 
     private void StopFlickering()
     {
         isFlickering = false;
+        weldParticles.SetActive(false);
         spotLight.intensity = normalIntensity;
     }
 

@@ -538,7 +538,7 @@ PrefabInstance:
     - target: {fileID: 5023293682260189714, guid: 543c4b4234716ea498d764e0c8fea487,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 543c4b4234716ea498d764e0c8fea487, type: 3}
@@ -840,6 +840,46 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 534669904}
+    - target: {fileID: 3629003224441289536, guid: 5e05fb41419587f4eaa0cd9c5b596b00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252573455664010055, guid: 5e05fb41419587f4eaa0cd9c5b596b00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446974100753592727, guid: 5e05fb41419587f4eaa0cd9c5b596b00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083473056199914120, guid: 5e05fb41419587f4eaa0cd9c5b596b00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7079839619756490516, guid: 5e05fb41419587f4eaa0cd9c5b596b00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7435053187092054198, guid: 5e05fb41419587f4eaa0cd9c5b596b00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377071392206372385, guid: 5e05fb41419587f4eaa0cd9c5b596b00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9080857579833626337, guid: 5e05fb41419587f4eaa0cd9c5b596b00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e05fb41419587f4eaa0cd9c5b596b00, type: 3}
 --- !u!1001 &916444953
@@ -851,15 +891,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1142439751, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
       propertyPath: normalIntensity
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1142439751, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
       propertyPath: maxflickerIntensity
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1142439751, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
       propertyPath: minFlickerIntensity
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1617652193, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
       propertyPath: m_Range
@@ -867,7 +907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1617652193, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
       propertyPath: m_Intensity
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1617652193, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
       propertyPath: m_Color.r
