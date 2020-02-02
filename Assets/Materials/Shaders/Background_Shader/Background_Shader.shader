@@ -5,7 +5,8 @@ Shader "Background_Shader"
 	Properties
 	{
 		_BaseColor("Base Color", 2D) = "white" {}
-		_Vector0("Vector 0", Vector) = (-5000,1000,0,1)
+		_ColorShift("Color Shift", Vector) = (-5000,1000,0,1)
+		_Color0("Color 0", Color) = (0.03702387,0.4579069,0.6037736,0)
 		[HideInInspector] _texcoord( "", 2D ) = "white" {}
 	}
 	
@@ -58,7 +59,8 @@ Shader "Background_Shader"
 
 			uniform sampler2D _BaseColor;
 			uniform float4 _BaseColor_ST;
-			uniform float4 _Vector0;
+			uniform float4 _Color0;
+			uniform float4 _ColorShift;
 			
 			v2f vert ( appdata v )
 			{
@@ -91,10 +93,9 @@ Shader "Background_Shader"
 				fixed4 finalColor;
 				float2 uv_BaseColor = i.ase_texcoord.xy * _BaseColor_ST.xy + _BaseColor_ST.zw;
 				float4 tex2DNode1 = tex2D( _BaseColor, uv_BaseColor );
-				float4 color14 = IsGammaSpace() ? float4(0.03702387,0.4579069,0.6037736,0) : float4(0.002865624,0.1771277,0.3229691,0);
 				float3 ase_worldPos = i.ase_texcoord1.xyz;
 				float WorldSpace4 = ase_worldPos.y;
-				float4 lerpResult16 = lerp( ( tex2DNode1 * color14 ) , tex2DNode1 , (_Vector0.z + (WorldSpace4 - _Vector0.x) * (_Vector0.w - _Vector0.z) / (_Vector0.y - _Vector0.x)));
+				float4 lerpResult16 = lerp( ( tex2DNode1 * _Color0 ) , tex2DNode1 , (_ColorShift.z + (WorldSpace4 - _ColorShift.x) * (_ColorShift.w - _ColorShift.z) / (_ColorShift.y - _ColorShift.x)));
 				
 				
 				finalColor = lerpResult16;
@@ -109,14 +110,14 @@ Shader "Background_Shader"
 }
 /*ASEBEGIN
 Version=16301
-2047;128;1712;1226;2341.946;341.2378;1.401276;True;False
+2047;128;1712;1226;2464.824;569.1185;1.3;True;False
 Node;AmplifyShaderEditor.CommentaryNode;9;-940.8671,-855.4551;Float;False;681;229;Comment;2;6;4;World Space;1,1,1,1;0;0
 Node;AmplifyShaderEditor.WorldPosInputsNode;6;-890.8672,-805.4551;Float;False;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
 Node;AmplifyShaderEditor.RegisterLocalVarNode;4;-502.8672,-755.4552;Float;False;WorldSpace;-1;True;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.GetLocalVarNode;11;-1665.565,67.35708;Float;False;4;WorldSpace;1;0;OBJECT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SamplerNode;1;-1808.673,-518.2311;Float;True;Property;_BaseColor;Base Color;0;0;Create;True;0;0;False;0;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;6;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.ColorNode;14;-1910.09,-225.7662;Float;False;Constant;_Color0;Color 0;1;0;Create;True;0;0;False;0;0.03702387,0.4579069,0.6037736,0;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.Vector4Node;19;-1585.042,460.7026;Float;False;Property;_Vector0;Vector 0;1;0;Create;True;0;0;False;0;-5000,1000,0,1;0,0,0,0;0;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;14;-1984.09,-238.7662;Float;False;Property;_Color0;Color 0;2;0;Create;True;0;0;False;0;0.03702387,0.4579069,0.6037736,0;0.03702387,0.4579069,0.6037736,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.Vector4Node;19;-1585.042,460.7026;Float;False;Property;_ColorShift;Color Shift;1;0;Create;True;0;0;False;0;-5000,1000,0,1;0,0,0,0;0;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;13;-1275.29,-30.63885;Float;False;2;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.TFHCRemapNode;18;-1203.643,324.7444;Float;False;5;0;FLOAT;0;False;1;FLOAT;-5000;False;2;FLOAT;1000;False;3;FLOAT;0;False;4;FLOAT;1;False;1;FLOAT;0
 Node;AmplifyShaderEditor.LerpOp;16;-943.3235,-34.7438;Float;True;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
@@ -137,4 +138,4 @@ WireConnection;16;2;18;0
 WireConnection;17;0;11;0
 WireConnection;10;0;16;0
 ASEEND*/
-//CHKSM=4B5805D9829215A58A250D36815713FE2B2C8857
+//CHKSM=77E185BB2E71FD30431A4E7EC42C12998E4442CF
