@@ -16,8 +16,8 @@ public class HealthManager : MonoBehaviour
     private float sliderBarNewWidth;
 
     [SerializeField] private float maxHealth;
-    private float currentHealth;
-    private bool losingHealth;
+    public float currentHealth;
+    public bool losingHealth;
     [SerializeField] private float gainHealthAmount;
     [SerializeField] private float gainHealthTimeInterval;
     private float gainHealthTimeRef;
@@ -45,6 +45,7 @@ public class HealthManager : MonoBehaviour
         sliderBarHeight = sliderBarRect.rect.height;
 
         currentHealth = maxHealth;
+        gainHealthTimeRef = Time.time;
         losingHealth = false;
         loseHealthTimeRef = Time.time;
     }
@@ -61,30 +62,49 @@ public class HealthManager : MonoBehaviour
 
     private void Update()
     {
-        if(losingHealth == true && (Time.time - loseHealthTimeRef) >= loseHealthTimeInterval)
+        if(!GameManager.Instance.IsGameplayState())
+        {
+            return;
+        }
+
+        if (CheckIsWelding() == true)
+        {
+            losingHealth = false;
+        }
+        else
+        {
+            losingHealth = true;
+        }
+
+        if (losingHealth == true && (Time.time - loseHealthTimeRef) >= loseHealthTimeInterval)
         {
             LoseHealth();
             loseHealthTimeRef = Time.time;
         }
 
-        if(losingHealth == false && (Time.time -gainHealthTimeRef) >= gainHealthTimeInterval)
+        if(losingHealth == false && (Time.time - gainHealthTimeRef) >= gainHealthTimeInterval)
         {
             GainHealth();
-        }
-
-        if(CheckIsWelding())
-        {
-            losingHealth = true;
-        }
-        else
-        {
-            losingHealth = false;
+            gainHealthTimeRef = Time.time;
+            Debug.Log("Gaiing health");
         }
     }
 
     private bool CheckIsWelding()
     {
-        return  playerController.IsPlayerWelding() && playerCurveManager.isNearCurve;    
+        bool check;
+
+        if(playerController.IsPlayerWelding() == true && playerCurveManager.isNearCurve == true)
+        {
+            check = true;
+        }
+        else
+        {
+            check = false;
+        }
+
+
+        return check;
     }
 
     private void HandleStartLosingHealth()
@@ -104,6 +124,8 @@ public class HealthManager : MonoBehaviour
 
         sliderBarNewWidth = (currentHealth / maxHealth) * sliderBarMaxWidth;
         sliderBarRect.sizeDelta = new Vector2(sliderBarNewWidth, sliderBarHeight);
+
+        currentHealth = newHealth;
     }
 
     private void LoseHealth()

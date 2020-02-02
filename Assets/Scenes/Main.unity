@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276838, g: 0.21589161, b: 0.2978253, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276844, g: 0.2158918, b: 0.2978254, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -112,12 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1583324 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4688145296798209541, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
-    type: 3}
-  m_PrefabInstance: {fileID: 204644211}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &151992107
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +365,12 @@ PrefabInstance:
     - target: {fileID: 4688145295161650881, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4688145296798209541, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3bc1e6cd46e74cd998cd9c1605e3a77, type: 3}
@@ -935,6 +934,10 @@ PrefabInstance:
       propertyPath: curve
       value: 
       objectReference: {fileID: 535929572}
+    - target: {fileID: 1974523639, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
+      propertyPath: threshold
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1877890501620531817, guid: d289a58f73c494cec96a1dc72eb5b32b,
         type: 3}
       propertyPath: scrollingManager
@@ -1112,7 +1115,11 @@ PrefabInstance:
     - target: {fileID: 1112187123, guid: 9638ddd52b8c94971acf2f098d237850, type: 3}
       propertyPath: SliderBar
       value: 
-      objectReference: {fileID: 1583324}
+      objectReference: {fileID: 1898745713}
+    - target: {fileID: 1112187123, guid: 9638ddd52b8c94971acf2f098d237850, type: 3}
+      propertyPath: gainHealthAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1099689104195470398, guid: 9638ddd52b8c94971acf2f098d237850,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1493,6 +1500,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30324d84315cef24cb6055def9e8d086, type: 3}
+--- !u!1 &1898745713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4688145295476040923, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+    type: 3}
+  m_PrefabInstance: {fileID: 204644211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2036267216
 PrefabInstance:
   m_ObjectHideFlags: 0
