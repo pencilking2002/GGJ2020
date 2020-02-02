@@ -8,8 +8,8 @@ public class PlayerCurveManager : MonoBehaviour
 {
     public BGCurve curve;
     private BGCcMath curveMath;
-    private List<BGCurve> curves;
-
+    private List<BGCurve> curvesList = new List<BGCurve>();
+    private List<BGCcMath> curveMathList = new List<BGCcMath>();
     public PlayerController player;
     public float threshold = 5.0f;
     public bool isNearCurve;
@@ -18,20 +18,27 @@ public class PlayerCurveManager : MonoBehaviour
     {
         curveMath = curve.GetComponent<BGCcMath>();
         var curveArr = GameObject.FindObjectsOfType<BGCurve>();
-        curves = new List<BGCurve>();
-        curves.AddRange(curveArr);
+        curvesList.AddRange(curveArr);
+
+        foreach(var curve in curvesList)
+            curveMathList.Add(curve.GetComponent<BGCcMath>());
     }
 
-    // private void OnDrawGizmos()
-    // {
-    //     Gizmos.color = Color.yellow;
+     private void OnDrawGizmos()
+     {
+        if (isNearCurve)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(transform.position + Vector3.up * 2, 1.0f);
+        }
+
     //     Vector3 closestPoint = Vector3.zero;
     //     closestPoint = curveMath.Math.CalcPositionByClosestPoint(player.transform.position);
     //     for(int sIndex=0; sIndex<curveMath.Math.SectionsCount; sIndex++)
     //     {
     //         for(int i=0; i<curveMath.Math.SectionInfos[sIndex].PointsCount; i++)
     //         {
-    //             Gizmos.DrawSphere(curveMath.Math.SectionInfos[sIndex].Points[i].Position, 0.2f);
+    //             Gizmos.DrawSphere(transform.position);
     //         }
     //     }
 
@@ -40,12 +47,16 @@ public class PlayerCurveManager : MonoBehaviour
     //         Gizmos.color = Color.red;
     //         Gizmos.DrawSphere(closestPoint, 0.25f);
     //     }
-    // }
+     }
 
     private void Update()
     {
         Vector3 closestPoint = Vector3.zero;
-        closestPoint = curveMath.Math.CalcPositionByClosestPoint(player.transform.position);
+        for (int i=0; i<curveMathList.Count; i++)
+        {
+            closestPoint = curveMathList[i].Math.CalcPositionByClosestPoint(player.transform.position);
+        }
+
         isNearCurve = (closestPoint != Vector3.zero && Vector2.Distance(closestPoint, player.transform.position) < threshold);
     }
 }
