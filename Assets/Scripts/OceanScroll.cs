@@ -9,8 +9,9 @@ public class OceanScroll : MonoBehaviour
 
     private void Awake()
     {
-        Destroy(gameObject, destroyDelay);
+//        Destroy(gameObject, destroyDelay);
     }
+
     private void Update()
     {
          if (GameManager.Instance.IsMenuState())
