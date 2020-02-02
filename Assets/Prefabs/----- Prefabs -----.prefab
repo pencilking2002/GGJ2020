@@ -157,6 +157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4736258138664118932}
+  - component: {fileID: 1112187123}
   m_Layer: 0
   m_Name: MeterManager
   m_TagString: Untagged
@@ -178,6 +179,26 @@ Transform:
   m_Father: {fileID: 1099689104195470398}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1112187123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2752910131600067832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd545b7e1c8f4a5f9cc2df2d16026a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  playerCurveManager: {fileID: 0}
+  SliderBar: {fileID: 0}
+  maxHealth: 100
+  gainHealthAmount: 5
+  gainHealthTimeInterval: 1
+  loseHealthAmount: 5
+  loseHealthTimeInterval: 1
 --- !u!1 &4705496963472744318
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61876b242751504fbe9861dc9cf5ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: 0
+  gameState: 1
 --- !u!1 &5106024153292046161
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6472415973891618670
 Transform:
   m_ObjectHideFlags: 0
