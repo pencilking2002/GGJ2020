@@ -16,6 +16,9 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private float maxHealth;
     private float currentHealth;
     private bool losingHealth;
+    [SerializeField] private float gainHealthAmount;
+    [SerializeField] private float gainHealthTimeInterval;
+    private float gainHealthTimeRef;
     [SerializeField] private float loseHealthAmount;
     [SerializeField] private float loseHealthTimeInterval;
     private float loseHealthTimeRef;
@@ -61,6 +64,11 @@ public class HealthManager : MonoBehaviour
             LoseHealth();
             loseHealthTimeRef = Time.time;
         }
+
+        if(losingHealth == false && (Time.time -gainHealthTimeRef) >= gainHealthTimeInterval)
+        {
+            GainHealth();
+        }
     }
 
     private void HandleStartLosingHealth()
@@ -69,9 +77,23 @@ public class HealthManager : MonoBehaviour
         losingHealth = false;
     }
 
+    private void GainHealth()
+    {
+        float newHealth = currentHealth + gainHealthAmount;
+
+        if(newHealth > maxHealth)
+        {
+            newHealth = maxHealth;
+        }
+
+        sliderBarNewWidth = (currentHealth / maxHealth) * sliderBarMaxWidth;
+        sliderBarRect.sizeDelta = new Vector2(sliderBarNewWidth, sliderBarHeight);
+    }
+
     private void LoseHealth()
     {
         currentHealth -= loseHealthAmount;
+
         if(currentHealth > 0)
         {
             sliderBarNewWidth = (currentHealth / maxHealth) * sliderBarMaxWidth;
