@@ -34,22 +34,6 @@ public class PlayerCurveManager : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawSphere(transform.position + Vector3.up * 2, 1.0f);
         }
-
-    //     Vector3 closestPoint = Vector3.zero;
-    //     closestPoint = curveMath.Math.CalcPositionByClosestPoint(player.transform.position);
-    //     for(int sIndex=0; sIndex<curveMath.Math.SectionsCount; sIndex++)
-    //     {
-    //         for(int i=0; i<curveMath.Math.SectionInfos[sIndex].PointsCount; i++)
-    //         {
-    //             Gizmos.DrawSphere(transform.position);
-    //         }
-    //     }
-
-    //     if (isNearCurve)
-    //     {
-    //         Gizmos.color = Color.red;
-    //         Gizmos.DrawSphere(closestPoint, 0.25f);
-    //     }
      }
 
     private void Update()

@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-       SetIntroState();
+       SetMenuState();
 
         if (Instance == null)
         {

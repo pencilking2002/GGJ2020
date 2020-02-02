@@ -13,8 +13,8 @@ public class OceanScroll : MonoBehaviour
     }
     private void Update()
     {
-        //  if (!GameManager.Instance.IsGameplayState())
-        //     return;
+         if (GameManager.Instance.IsMenuState())
+            return;
 
         var pos = transform.position;
         pos.y += scrollingManager.scrollSpeed * Time.deltaTime;

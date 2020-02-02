@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Time.timeSinceLevelLoad > playerTrackDelay)
+        if (!GameManager.Instance.IsMenuState() && Time.timeSinceLevelLoad > playerTrackDelay)
         {
             var targetCamPos = transform.position;
             targetCamPos.y = player.transform.position.y;
