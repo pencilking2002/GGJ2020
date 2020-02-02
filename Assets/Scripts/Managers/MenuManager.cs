@@ -40,6 +40,7 @@ public class MenuManager : MonoBehaviour
     public void HandleStartButton()
     {
         Debug.Log("Start button pressed");
+        GameManager.Instance.SetIntroState();
         OnGameStart?.Invoke();
     }
 
