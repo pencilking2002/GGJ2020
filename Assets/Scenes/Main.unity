@@ -901,6 +901,10 @@ PrefabInstance:
       propertyPath: minFlickerIntensity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1142439751, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
+      propertyPath: weldParticles
+      value: 
+      objectReference: {fileID: 1684311390}
     - target: {fileID: 1617652193, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
       propertyPath: m_Range
       value: 10
@@ -1062,7 +1066,6 @@ MonoBehaviour:
   defaultPoolSize: 0
   lowerPoolSize: 0
   streamingPoolSize: 0
-  preparePoolSize: 0
   memoryCutoffThreshold: 0
   monitorPoolSize: 0
   monitorQueuePoolSize: 0
@@ -1184,6 +1187,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollingManager: {fileID: 1005626447}
   destroyDelay: 20
+--- !u!1 &1684311390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5883510734883751389, guid: d289a58f73c494cec96a1dc72eb5b32b,
+    type: 3}
+  m_PrefabInstance: {fileID: 916444953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1749314994
 GameObject:
   m_ObjectHideFlags: 0
