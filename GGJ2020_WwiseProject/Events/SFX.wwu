@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{63FF70D9-AAA1-4762-8206-E2CEDEAE5D8D}" SchemaVersion="94">
+	<Events>
+		<WorkUnit Name="SFX" ID="{63FF70D9-AAA1-4762-8206-E2CEDEAE5D8D}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="PlayWelding" ID="{03791F9C-04AB-4CA2-8287-2F1FE9DD7A7B}"/>
+				<Event Name="PlayWaterAmbience" ID="{FDB79B0E-5C2E-4C7D-989D-6AECB79CA061}"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

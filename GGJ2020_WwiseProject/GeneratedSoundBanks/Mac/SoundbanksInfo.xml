@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="11" SoundbankVersion="134">
+	<RootPaths>
+		<ProjectRoot>D:\Users\Mark Benis\Documents\Game Projects\Unity Files\GGJ2020\GGJ2020_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Users\Mark Benis\Documents\Game Projects\Unity Files\GGJ2020\GGJ2020_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Users\Mark Benis\Documents\Game Projects\Unity Files\GGJ2020\GGJ2020_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\Users\Mark Benis\Documents\Game Projects\Unity Files\GGJ2020\GGJ2020_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX">
+			<ObjectPath>\SoundBanks\Music\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="254571662" Name="PlayMusicMaster" ObjectPath="\Events\Music\MusicMaster\PlayMusicMaster" DurationType="Infinite"/>
+				<Event Id="1357007640" Name="StopMusicMaster" ObjectPath="\Events\Music\MusicMaster\StopMusicMaster" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="660583346" Language="SFX">
+					<ShortName>Menu_v2.wav</ShortName>
+					<Path>SFX\Menu_v2_D79FB2B7.wem</Path>
+				</File>
+				<File Id="994946632" Language="SFX">
+					<ShortName>Game_v1.wav</ShortName>
+					<Path>SFX\Game_v1_D79FB2B7.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

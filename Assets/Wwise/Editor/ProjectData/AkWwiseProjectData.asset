@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b4d9790ac9efb49930971cf6f2adb4, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 7b57acf9c912754a973286e9e5fb0985
+    GuidInternal: 
+    m_lastTime: -8586209479247941260
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: e5719c88e77c8f46804118d8119dd286
+    GuidInternal: 
+    m_lastTime: -8586209479248370113
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 4f893a5a7ce9e64b9062c3d49cfe6736
+    GuidInternal: 
+    m_lastTime: -8586209479247422654
+    List: []
+  - PhysicalPath: SoundBanks\Music.wwu
+    ParentPhysicalPath: 
+    guid: df4d68bacbbde845baae7cd87a739a6a
+    GuidInternal: 
+    m_lastTime: -8586209435155931295
+    List:
+    - name: Main
+      guid: 54d000f6ca9f214cbd4edcdc0de97cce
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: Main
+        ObjectType: 7
+      Path: Music\Main
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: e7da76b93912fe48ad3ed3447e2d10a7
+    GuidInternal: 
+    m_lastTime: -8586209479248300297
+    List: []
+  - PhysicalPath: Events\Music.wwu
+    ParentPhysicalPath: 
+    guid: 66f254efded89b42b817b896065452a2
+    GuidInternal: 
+    m_lastTime: -8586209460373384573
+    List:
+    - name: PlayMusicMaster
+      guid: 00812ac634e82e4b8e19264281c6926e
+      id: 254571662
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: MusicMaster
+        ObjectType: 4
+      - ElementName: PlayMusicMaster
+        ObjectType: 3
+      Path: Music\MusicMaster\PlayMusicMaster
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: StopMusicMaster
+      guid: c0c5aa76cbab6442a6f394ce4003b311
+      id: 1357007640
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: MusicMaster
+        ObjectType: 4
+      - ElementName: StopMusicMaster
+        ObjectType: 3
+      Path: Music\MusicMaster\StopMusicMaster
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+  - PhysicalPath: Events\SFX.wwu
+    ParentPhysicalPath: 
+    guid: d970ff63a1aa62478206e2cedeae5d8d
+    GuidInternal: 
+    m_lastTime: -8586209429191250685
+    List:
+    - name: PlayWaterAmbience
+      guid: 0e9bb7fd2e5c7d4c989d6aecb79ca061
+      id: 2154459496
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: PlayWaterAmbience
+        ObjectType: 3
+      Path: SFX\PlayWaterAmbience
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayWelding
+      guid: 9c1f7903ab04a24c82872f1fe9dd7a7b
+      id: 1344000509
+      PathAndIcons:
+      - ElementName: SFX
+        ObjectType: 12
+      - ElementName: PlayWelding
+        ObjectType: 3
+      Path: SFX\PlayWelding
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 29dafd8637f4f3489beba1b5e894003c
+    GuidInternal: 
+    m_lastTime: -8586209479247891393
+    List: []
+  - PhysicalPath: Game Parameters\Music.wwu
+    ParentPhysicalPath: 
+    guid: 47ddfc4c078a0e4c8737cd762c202102
+    GuidInternal: 
+    m_lastTime: -8586209460133359230
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 8d879fb47af2e94ea91baff67f320834
+    GuidInternal: 
+    m_lastTime: -8586209479247502423
+    List: []
+  - PhysicalPath: States\Music.wwu
+    ParentPhysicalPath: 
+    guid: 8e0763b5fa2dba4bbb56b860ade19965
+    GuidInternal: 
+    m_lastTime: -8586209437718018131
+    List:
+    - name: GameState
+      guid: a016286334fbe9478e5ae642251c5656
+      id: 4091656514
+      PathAndIcons:
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: GameState
+        ObjectType: 9
+      Path: Music\GameState
+      values:
+      - name: Game
+        guid: 34f3d9b10bfb0148b75c8342f5d3cdd1
+        id: 702482391
+        PathAndIcons:
+        - ElementName: Game
+          ObjectType: 8
+      - name: Menu
+        guid: 2287d8bad058a74facc7299a9a2f42bf
+        id: 2607556080
+        PathAndIcons:
+        - ElementName: Menu
+          ObjectType: 8
+      - name: None
+        guid: 63785edcd9f3b94a8500c73de9f8d28e
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: db63900bd8a67f459672b3c685261d54
+    GuidInternal: 
+    m_lastTime: -8586209479247711863
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 63959906d0013b49b5502f9507491ec2
+    GuidInternal: 
+    m_lastTime: -8586209479247612140
+    List: []
+  ExpandedItems: []
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 
