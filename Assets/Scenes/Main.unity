@@ -962,65 +962,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
---- !u!1 &957599032
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 957599034}
-  - component: {fileID: 957599033}
-  m_Layer: 0
-  m_Name: WwiseGlobal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &957599033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957599032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b13aaff69b240184dbf8189ef9fc0e2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitializationSettings: {fileID: 11400000, guid: 8a066f69428210c40b47fc187fb5f633,
-    type: 2}
-  basePath: 
-  language: 
-  defaultPoolSize: 0
-  lowerPoolSize: 0
-  streamingPoolSize: 0
-  preparePoolSize: 0
-  memoryCutoffThreshold: 0
-  monitorPoolSize: 0
-  monitorQueuePoolSize: 0
-  callbackManagerBufferSize: 0
-  spatialAudioPoolSize: 0
-  maxSoundPropagationDepth: 0
-  diffractionFlags: 11
-  engineLogging: 0
---- !u!4 &957599034
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957599032}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1005626447 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 489721671805384477, guid: 5e05fb41419587f4eaa0cd9c5b596b00,
@@ -1033,7 +974,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e134cfef84cfb4fb16df985281883e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1132923557
+--- !u!114 &1403956747 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8060191633041156097, guid: d289a58f73c494cec96a1dc72eb5b32b,
+    type: 3}
+  m_PrefabInstance: {fileID: 916444953}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1333374ebf5b4d3cb393cc6c5d2c809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1458915395
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1041,8 +994,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1132923559}
-  - component: {fileID: 1132923558}
+  - component: {fileID: 1458915397}
+  - component: {fileID: 1458915396}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -1050,13 +1003,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1132923558
+--- !u!114 &1458915396
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132923557}
+  m_GameObject: {fileID: 1458915395}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b13aaff69b240184dbf8189ef9fc0e2b, type: 3}
@@ -1078,32 +1031,20 @@ MonoBehaviour:
   maxSoundPropagationDepth: 0
   diffractionFlags: 11
   engineLogging: 0
---- !u!4 &1132923559
+--- !u!4 &1458915397
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132923557}
+  m_GameObject: {fileID: 1458915395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1403956747 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8060191633041156097, guid: d289a58f73c494cec96a1dc72eb5b32b,
-    type: 3}
-  m_PrefabInstance: {fileID: 916444953}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1333374ebf5b4d3cb393cc6c5d2c809, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1548223397
 PrefabInstance:
   m_ObjectHideFlags: 0
