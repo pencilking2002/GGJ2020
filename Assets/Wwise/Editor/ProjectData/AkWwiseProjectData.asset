@@ -13,31 +13,31 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7b57acf9c912754a973286e9e5fb0985
     GuidInternal: 
-    m_lastTime: -8586209479247941260
+    m_lastTime: -8586209366094775808
     List: []
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: e5719c88e77c8f46804118d8119dd286
     GuidInternal: 
-    m_lastTime: -8586209479248370113
+    m_lastTime: -8586209366094775808
     List: []
   BankWwu:
-  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+  - PhysicalPath: SoundBanks/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 4f893a5a7ce9e64b9062c3d49cfe6736
     GuidInternal: 
-    m_lastTime: -8586209479247422654
+    m_lastTime: -8586209366094775808
     List: []
-  - PhysicalPath: SoundBanks\Music.wwu
+  - PhysicalPath: SoundBanks/Music.wwu
     ParentPhysicalPath: 
     guid: df4d68bacbbde845baae7cd87a739a6a
     GuidInternal: 
-    m_lastTime: -8586209435155931295
+    m_lastTime: -8586209366094775808
     List:
     - name: Main
       guid: 54d000f6ca9f214cbd4edcdc0de97cce
@@ -47,19 +47,19 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Main
         ObjectType: 7
-      Path: Music\Main
+      Path: Music/Main
   EventWwu:
-  - PhysicalPath: Events\Default Work Unit.wwu
+  - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: e7da76b93912fe48ad3ed3447e2d10a7
     GuidInternal: 
-    m_lastTime: -8586209479248300297
+    m_lastTime: -8586209366104775808
     List: []
-  - PhysicalPath: Events\Music.wwu
+  - PhysicalPath: Events/Music.wwu
     ParentPhysicalPath: 
     guid: 66f254efded89b42b817b896065452a2
     GuidInternal: 
-    m_lastTime: -8586209460373384573
+    m_lastTime: -8586209366104775808
     List:
     - name: PlayMusicMaster
       guid: 00812ac634e82e4b8e19264281c6926e
@@ -71,7 +71,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: PlayMusicMaster
         ObjectType: 3
-      Path: Music\MusicMaster\PlayMusicMaster
+      Path: Music/MusicMaster/PlayMusicMaster
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -85,15 +85,15 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: StopMusicMaster
         ObjectType: 3
-      Path: Music\MusicMaster\StopMusicMaster
+      Path: Music/MusicMaster/StopMusicMaster
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-  - PhysicalPath: Events\SFX.wwu
+  - PhysicalPath: Events/SFX.wwu
     ParentPhysicalPath: 
     guid: d970ff63a1aa62478206e2cedeae5d8d
     GuidInternal: 
-    m_lastTime: -8586209429191250685
+    m_lastTime: -8586209366104775808
     List:
     - name: PlayWaterAmbience
       guid: 0e9bb7fd2e5c7d4c989d6aecb79ca061
@@ -103,7 +103,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: PlayWaterAmbience
         ObjectType: 3
-      Path: SFX\PlayWaterAmbience
+      Path: SFX/PlayWaterAmbience
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -115,35 +115,35 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: PlayWelding
         ObjectType: 3
-      Path: SFX\PlayWelding
+      Path: SFX/PlayWelding
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
-  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+  - PhysicalPath: Game Parameters/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 29dafd8637f4f3489beba1b5e894003c
     GuidInternal: 
-    m_lastTime: -8586209479247891393
+    m_lastTime: -8586209366104775808
     List: []
-  - PhysicalPath: Game Parameters\Music.wwu
+  - PhysicalPath: Game Parameters/Music.wwu
     ParentPhysicalPath: 
     guid: 47ddfc4c078a0e4c8737cd762c202102
     GuidInternal: 
-    m_lastTime: -8586209460133359230
+    m_lastTime: -8586209366104775808
     List: []
   StateWwu:
-  - PhysicalPath: States\Default Work Unit.wwu
+  - PhysicalPath: States/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 8d879fb47af2e94ea91baff67f320834
     GuidInternal: 
-    m_lastTime: -8586209479247502423
+    m_lastTime: -8586209366094775808
     List: []
-  - PhysicalPath: States\Music.wwu
+  - PhysicalPath: States/Music.wwu
     ParentPhysicalPath: 
     guid: 8e0763b5fa2dba4bbb56b860ade19965
     GuidInternal: 
-    m_lastTime: -8586209437718018131
+    m_lastTime: -8586209366094775808
     List:
     - name: GameState
       guid: a016286334fbe9478e5ae642251c5656
@@ -153,7 +153,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: GameState
         ObjectType: 9
-      Path: Music\GameState
+      Path: Music/GameState
       values:
       - name: Game
         guid: 34f3d9b10bfb0148b75c8342f5d3cdd1
@@ -177,18 +177,18 @@ MonoBehaviour:
       ValueIcons: []
       valuesInternal: []
   SwitchWwu:
-  - PhysicalPath: Switches\Default Work Unit.wwu
+  - PhysicalPath: Switches/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: db63900bd8a67f459672b3c685261d54
     GuidInternal: 
-    m_lastTime: -8586209479247711863
+    m_lastTime: -8586209366094775808
     List: []
   TriggerWwu:
-  - PhysicalPath: Triggers\Default Work Unit.wwu
+  - PhysicalPath: Triggers/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 63959906d0013b49b5502f9507491ec2
     GuidInternal: 
-    m_lastTime: -8586209479247612140
+    m_lastTime: -8586209366094775808
     List: []
   ExpandedItems: []
   autoPopulateEnabled: 1

@@ -2,50 +2,42 @@
 {
 	public virtual AkInitializationSettings AkInitializationSettings
 	{
-		get
-		{
-			return new AkInitializationSettings();
-		}
+		get { return new AkInitializationSettings(); }
 	}
 
 	public virtual AkSpatialAudioInitSettings AkSpatialAudioInitSettings
 	{
-		get
-		{
-			return new AkSpatialAudioInitSettings();
-		}
+		get { return new AkSpatialAudioInitSettings(); }
 	}
 
 	public virtual AkCallbackManager.InitializationSettings CallbackManagerInitializationSettings
 	{
-		get
-		{
-			return new AkCallbackManager.InitializationSettings();
-		}
+		get { return new AkCallbackManager.InitializationSettings(); }
 	}
 
 	public virtual string InitialLanguage
 	{
-		get
-		{
-			return "English(US)";
-		}
+		get { return "English(US)"; }
+	}
+
+	public virtual bool RenderDuringFocusLoss
+	{
+		get { return false; }
 	}
 
 	public virtual string SoundbankPath
 	{
-		get
-		{
-			return AkBasePathGetter.DefaultBasePath;
-		}
+		get { return AkBasePathGetter.DefaultBasePath; }
 	}
 
 	public virtual AkCommunicationSettings AkCommunicationSettings
 	{
-		get
-		{
-			return new AkCommunicationSettings();
-		}
+		get { return new AkCommunicationSettings(); }
+	}
+
+	public virtual bool UseAsyncOpen
+	{
+		get { return false; }
 	}
 }
 
@@ -250,7 +242,11 @@ public class AkCommonUserSettings : AkSettingsValidationHandler
 
 	protected static string GetPluginPath()
 	{
-#if UNITY_EDITOR || UNITY_ANDROID || UNITY_WSA
+#if UNITY_EDITOR_WIN
+		return System.IO.Path.Combine(UnityEngine.Application.dataPath, "Wwise", "Deployment", "Plugins", "Windows", "x86_64", "DSP");
+#elif UNITY_EDITOR_OSX
+		return System.IO.Path.Combine(UnityEngine.Application.dataPath, "Wwise", "Deployment", "Plugins", "Mac", "DSP");
+#elif UNITY_ANDROID || UNITY_WSA
 		return null;
 #elif PLATFORM_LUMIN
 		var dataPath = UnityEngine.Application.dataPath;
@@ -407,6 +403,12 @@ public class AkCommonAdvancedSettings : AkSettingsValidationHandler
 	[UnityEngine.Tooltip("Amount of time to wait for hardware devices to trigger an audio interrupt. If there is no interrupt after that time, the sound engine will revert to silent mode and continue operating until the hardware finally comes back.")]
 	public uint m_MaximumHardwareTimeoutMs = 1000;
 
+	[UnityEngine.Tooltip("Debug setting: Enable checks for out-of-range (and NAN) floats in the processing code. Do not enable in any normal usage, this setting uses a lot of CPU. Will print error messages in the log if invalid values are found at various point in the pipeline. Contact AK Support with the new error messages for more information.")]
+	public bool m_DebugOutOfRangeCheckEnabled = false;
+
+	[UnityEngine.Tooltip("Debug setting: Only used when bDebugOutOfRangeCheckEnabled is true. This defines the maximum values samples can have. Normal audio must be contained within +1/-1. This limit should be set higher to allow temporary or short excursions out of range. Default is 16.")]
+	public float m_DebugOutOfRangeLimit = 16.0f;
+
 	public virtual void CopyTo(AkInitSettings settings)
 	{
 		settings.uPrepareEventMemoryPoolID = m_PrepareEventMemoryPoolID;
@@ -415,6 +417,8 @@ public class AkCommonAdvancedSettings : AkSettingsValidationHandler
 		settings.uMonitorPoolSize = m_MonitorPoolSize;
 		settings.uMonitorQueuePoolSize = m_MonitorQueuePoolSize;
 		settings.uMaxHardwareTimeoutMs = m_MaximumHardwareTimeoutMs;
+		settings.bDebugOutOfRangeCheckEnabled = m_DebugOutOfRangeCheckEnabled;
+		settings.fDebugOutOfRangeLimit = m_DebugOutOfRangeLimit;
 	}
 
 	public virtual void CopyTo(AkPlatformInitSettings settings)
@@ -446,20 +450,26 @@ public class AkCommonAdvancedSettings : AkSettingsValidationHandler
 	{
 	}
 
-    public override void Validate()
-    {
-        if (m_SpatialAudioSettings.m_DiffractionShadowAttenuationFactor <= 0.0f)
-        {
-            UnityEngine.Debug.LogWarning("WwiseUnity: m_SpatialAudioSettings.m_DiffractionShadowAttenuationFactor must be greater than zero. Value was reset to the default (2.0)");
-            m_SpatialAudioSettings.m_DiffractionShadowAttenuationFactor = 2.0f;
-        }
+	[UnityEngine.Tooltip("The state of the \"in_bRenderAnyway\" argument passed to the AkSoundEngine.Suspend() function when the \"OnApplicationFocus\" Unity callback is received with \"false\" as its argument.")]
+	public bool m_RenderDuringFocusLoss;
 
-        if (m_SpatialAudioSettings.m_DiffractionShadowDegrees <= 0.0f)
-        {
-            UnityEngine.Debug.LogWarning("WwiseUnity: m_SpatialAudioSettings.m_DiffractionShadowDegrees must be greater than zero. Value was reset to the default (30.0)");
-            m_SpatialAudioSettings.m_DiffractionShadowDegrees = 30.0f;
-        }
-    }
+	[UnityEngine.Tooltip("Use Async Open in the low-level IO hook.")]
+	public bool m_UseAsyncOpen = false;
+
+	public override void Validate()
+	{
+		if (m_SpatialAudioSettings.m_DiffractionShadowAttenuationFactor <= 0.0f)
+		{
+			UnityEngine.Debug.LogWarning("WwiseUnity: m_SpatialAudioSettings.m_DiffractionShadowAttenuationFactor must be greater than zero. Value was reset to the default (2.0)");
+			m_SpatialAudioSettings.m_DiffractionShadowAttenuationFactor = 2.0f;
+		}
+
+		if (m_SpatialAudioSettings.m_DiffractionShadowDegrees <= 0.0f)
+		{
+			UnityEngine.Debug.LogWarning("WwiseUnity: m_SpatialAudioSettings.m_DiffractionShadowDegrees must be greater than zero. Value was reset to the default (30.0)");
+			m_SpatialAudioSettings.m_DiffractionShadowDegrees = 30.0f;
+		}
+	}
 }
 
 [System.Serializable]
@@ -533,6 +543,9 @@ public abstract class AkCommonPlatformSettings : AkBasePlatformSettings
 			advancedSettings.CopyTo(settings.initSettings);
 			advancedSettings.CopyTo(settings.platformSettings);
 			advancedSettings.CopyTo(settings.unityPlatformSpecificSettings);
+
+			settings.useAsyncOpen = advancedSettings.m_UseAsyncOpen;
+
 			return settings;
 		}
 	}
@@ -559,18 +572,22 @@ public abstract class AkCommonPlatformSettings : AkBasePlatformSettings
 
 	public override string InitialLanguage
 	{
-		get
-		{
-			return GetUserSettings().m_StartupLanguage;
-		}
+		get { return GetUserSettings().m_StartupLanguage; }
+	}
+
+	public override bool RenderDuringFocusLoss
+	{
+		get { return GetAdvancedSettings().m_RenderDuringFocusLoss; }
 	}
 
 	public override string SoundbankPath
 	{
-		get
-		{
-			return GetUserSettings().m_BasePath;
-		}
+		get { return GetUserSettings().m_BasePath; }
+	}
+
+	public override bool UseAsyncOpen
+	{
+		get { return GetAdvancedSettings().m_UseAsyncOpen; }
 	}
 
 	public override AkCommunicationSettings AkCommunicationSettings
