@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(canControlPlayer == false)
+        if(canControlPlayer == false || !GameManager.Instance.IsGameplayState())
         {
             return;
         }

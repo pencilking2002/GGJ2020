@@ -20,7 +20,9 @@ public class ScrollingManager : MonoBehaviour
     }
     private void Update()
     {
-        //var cutoffPoint = cam.ScreenToWorldPoint(new Vector3(0.5f, cam.pixelHeight, 10));
+        if (!GameManager.Instance.IsGameplayState())
+            return;
+            
         for(int i=0; i<modules.Count; i++)
         {
             var module = modules[i];

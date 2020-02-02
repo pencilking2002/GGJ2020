@@ -234,6 +234,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214f8e84ad19845478c8eb2018badc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollingManager: {fileID: 0}
+  lrPrefab: {fileID: 3932076435748605663, guid: 477a9e82a39c2104daccd1c5ea4cdebc,
+    type: 3}
+  pointList: []
+  canDraw: 0
+  pointAddedInterval: 0.05
 --- !u!1 &8060191633041156099
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curve: {fileID: 0}
   player: {fileID: 8060191633041156097}
-  threshold: 5
+  threshold: 1.5
   isNearCurve: 0
 --- !u!114 &1142439751
 MonoBehaviour:
