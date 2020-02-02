@@ -26,6 +26,9 @@ public class PlayerCurveManager : MonoBehaviour
 
      private void OnDrawGizmos()
      {
+        if (!GameManager.Instance.IsGameplayState() || !Application.isPlaying)
+            return;
+
         if (isNearCurve)
         {
             Gizmos.color = Color.red;
@@ -51,6 +54,9 @@ public class PlayerCurveManager : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManager.Instance.IsGameplayState())
+            return;
+
         Vector3 closestPoint = Vector3.zero;
         for (int i=0; i<curveMathList.Count; i++)
         {

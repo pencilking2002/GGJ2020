@@ -12,6 +12,9 @@ public class WeldLightController : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManager.Instance.IsGameplayState())
+            return;
+
         if (isFlickering)
         {
             spotLight.intensity = Random.Range(minFlickerIntensity, maxflickerIntensity);
