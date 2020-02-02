@@ -43,6 +43,12 @@ Shader "Toony Colors Pro 2/User/CurveShader"
 	{
 
 		Tags { "RenderType"="Opaque" }
+		Stencil {
+			Ref 2
+			Comp Equal
+			Pass Replace 
+		}
+	
 
 		CGPROGRAM
 

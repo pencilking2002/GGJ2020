@@ -16,7 +16,7 @@ public class ScrollingManager : MonoBehaviour
         for(int i=0; i<modules.Length; i++)
         {
             var module = modules[i];
-            if (module.bounds.min.y > cutoffPointY)
+            if (module.transform.position.y > cutoffPointY)
             {
                 Collider deepestModule = GetDeepestModule();
                 var offset = deepestModule.bounds.min.y-module.bounds.extents.y;
@@ -31,19 +31,20 @@ public class ScrollingManager : MonoBehaviour
 
     private Collider GetDeepestModule()
     {
-        float deepestPoint = 10000;
+        float deepestPoint = 100000;
         Collider deepestCollider = null;
 
         for(int i=0; i<modules.Length; i++)
         {
             Collider module = modules[i];
-            if (module.transform.position.y < deepestPoint)
+            if (module.transform.localPosition.y < deepestPoint)
             {
-                deepestPoint = module.transform.position.y;
+                deepestPoint = module.transform.localPosition.y;
                 deepestCollider = module;
             }
         }
 
+        Debug.Log("Deepest: " + deepestCollider.name);
         return deepestCollider;
     }
 }

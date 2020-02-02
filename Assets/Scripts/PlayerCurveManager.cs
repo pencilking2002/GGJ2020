@@ -7,11 +7,16 @@ using BansheeGz.BGSpline.Components;
 public class PlayerCurveManager : MonoBehaviour
 {
     public BGCurve curve;
-    public BGCcMath curveMath;
+    private BGCcMath curveMath;
     public PlayerController player;
     public float threshold = 5.0f;
     public bool isNearCurve;
 
+    private void Awake()
+    {
+        curveMath = curve.GetComponent<BGCcMath>();
+    }
+    
     // private void OnDrawGizmos()
     // {
     //     Gizmos.color = Color.yellow;

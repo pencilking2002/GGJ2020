@@ -195,7 +195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curve: {fileID: 0}
-  curveMath: {fileID: 0}
   player: {fileID: 8060191633041156097}
   threshold: 5
   isNearCurve: 0

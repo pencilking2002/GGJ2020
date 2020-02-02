@@ -31,11 +31,19 @@ Shader "Toony Colors Pro 2/User/ModuleShader"
 	{
 
 		Tags { "RenderType"="Opaque" }
+	
+		Stencil  {
+			Ref 2
+			Comp always
+			Pass replace
+		}
 
 		CGPROGRAM
 
 		#pragma surface surf ToonyColorsCustom  exclude_path:deferred exclude_path:prepass
 		#pragma target 3.0
+		
+		
 
 		//================================================================
 		// VARIABLES
