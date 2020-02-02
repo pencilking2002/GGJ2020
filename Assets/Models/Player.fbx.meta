@@ -6,20 +6,72 @@ ModelImporter:
     100000: //RootNode
     100002: Sphere
     100004: Sphere.002
+    100006: head_globe
+    100008: inside_body
+    100010: welding_machine
     400000: //RootNode
     400002: Sphere
     400004: Sphere.002
+    400006: head_globe
+    400008: inside_body
+    400010: welding_machine
     2100000: No Name
+    2100002: Suit_01
+    2100004: Suit_02
+    2100006: Shuit_glass
+    2100008: Player_inside_char
+    2100010: welding_01
+    2100012: welding_02
     2300000: //RootNode
     2300002: Sphere
     2300004: Sphere.002
+    2300006: head_globe
+    2300008: inside_body
+    2300010: welding_machine
     3300000: //RootNode
     3300002: Sphere
     3300004: Sphere.002
+    3300006: head_globe
+    3300008: inside_body
+    3300010: welding_machine
     4300000: Sphere.001
     4300002: Sphere.002
     4300004: Sphere
-  externalObjects: {}
+    4300006: suit
+    4300008: head_globe
+    4300010: inside_body
+    4300012: welding_machine
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Player_inside_char
+    second: {fileID: 2100000, guid: 9af19cef946536a4fa17eac088039a75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shuit_glass
+    second: {fileID: 2100000, guid: e0f55a414cb304f4b8d9dc8c69df9d15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Suit_01
+    second: {fileID: 2100000, guid: d3274bfb4792b64408aeadcf801e9b3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Suit_02
+    second: {fileID: 2100000, guid: b1d82bfcd220fb9469156ee5836df1af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: welding_01
+    second: {fileID: 2100000, guid: 585927e65f1842f47b08f27e003c96b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: welding_02
+    second: {fileID: 2100000, guid: 74086dc42fbcc1140a1561f55e5cf851, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
