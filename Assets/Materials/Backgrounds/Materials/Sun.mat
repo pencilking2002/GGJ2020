@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Underwater
-  m_Shader: {fileID: 4800000, guid: 69e061898058bba49b397d2e81e8579d, type: 3}
+  m_Name: Sun
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
-  m_LightmapFlags: 0
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -40,15 +40,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 132d28f11c324cf45aeec3986c3e8ee1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 52e0ac29f63794f44843b0a5a26ec54e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -59,54 +55,23 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Texture0:
-        m_Texture: {fileID: 2800000, guid: b321a150a7e6b1745b0f571d88c48a95, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TextureSample0:
-        m_Texture: {fileID: 2800000, guid: 52e0ac29f63794f44843b0a5a26ec54e, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _texcoord:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Depth: -24.07
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EdgeDistance: 3.93
-    - _EdgeFoamTile: 0.64
-    - _EdgeLength: 15
-    - _EdgePower: 0.35
-    - _FoamMask: 0.03
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
-    - _NormalSpeed: 0.005
-    - _NormalStrength: 1
-    - _NormalTile: 0.05
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Refraction: 0.03
-    - _SeaFoamTile: 0.64
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaveHeight: 0.4
-    - _WaveSpeed: 1
-    - _WaveTile: 0.32
     - _ZWrite: 1
-    - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TopColor: {r: 0.14159843, g: 0.6694148, b: 0.6981132, a: 0}
-    - _Vector0: {r: 0.15, g: 0.02, b: 0, a: 0}
-    - _WaterColor: {r: 0.19579923, g: 0.6295081, b: 0.754717, a: 0}
-    - _WaveStretch: {r: 0.15, g: 0.01, b: 0, a: 0}
