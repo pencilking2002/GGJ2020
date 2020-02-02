@@ -5,6 +5,7 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
+    public LineDrawing lineDrawer;
     public PlayerModuleCollider moduleCollider;
     [SerializeField] private Transform leftLimit;
     [SerializeField] private Transform rightLimit;
