@@ -455,6 +455,18 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1617652193, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617652193, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.96970296
+      objectReference: {fileID: 0}
+    - target: {fileID: 1617652193, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8021093
+      objectReference: {fileID: 0}
     - target: {fileID: 1974523639, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
       propertyPath: curve
       value: 
