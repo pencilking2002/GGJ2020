@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     public GameObject gameMenu;
 
     public static Action OnGameStart;
+    public static Action OnBackToMenu;
 
     private void Awake()
     {
