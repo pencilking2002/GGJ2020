@@ -6,6 +6,8 @@ using System;
 public class HealthManager : MonoBehaviour
 {
     public static HealthManager Instance;
+    public PlayerController playerController;
+    public PlayerCurveManager playerCurveManager;
 
     [SerializeField] private GameObject SliderBar;
     private RectTransform sliderBarRect;
@@ -69,6 +71,20 @@ public class HealthManager : MonoBehaviour
         {
             GainHealth();
         }
+
+        if(CheckIsWelding())
+        {
+            losingHealth = true;
+        }
+        else
+        {
+            losingHealth = false;
+        }
+    }
+
+    private bool CheckIsWelding()
+    {
+        return  playerController.IsPlayerWelding() && playerCurveManager.isNearCurve;    
     }
 
     private void HandleStartLosingHealth()
