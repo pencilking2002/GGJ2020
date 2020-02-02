@@ -1120,6 +1120,10 @@ PrefabInstance:
       propertyPath: gainHealthAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1112187123, guid: 9638ddd52b8c94971acf2f098d237850, type: 3}
+      propertyPath: loseHealthAmount
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1099689104195470398, guid: 9638ddd52b8c94971acf2f098d237850,
         type: 3}
       propertyPath: m_LocalPosition.x

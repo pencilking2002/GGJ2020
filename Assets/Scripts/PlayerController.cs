@@ -81,6 +81,11 @@ public class PlayerController : MonoBehaviour
         {
             OnWeldStop?.Invoke();
         }
+
+        if(Input.GetKeyDown(KeyCode.Y))
+        {
+            Application.Quit();
+        }
     }
 
     private void MovePlayer()
