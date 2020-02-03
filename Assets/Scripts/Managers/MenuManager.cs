@@ -41,7 +41,12 @@ public class MenuManager : MonoBehaviour
         OnGameStart?.Invoke();
     }
 
-     private void OnEnable()
+    public void OnPressRestartButton()
+    {
+        GameManager.Instance.sceneManager.ReloadCurrentScene();
+    }
+
+    private void OnEnable()
     {
         HealthManager.OnDeath += HandleGameOver;
     }

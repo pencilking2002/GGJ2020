@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 
 public class HealthManager : MonoBehaviour
 {
-    public static HealthManager Instance;
     public PlayerController playerController;
     public PlayerCurveManager playerCurveManager;
 
@@ -29,17 +26,6 @@ public class HealthManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            transform.SetParent(null);
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(this);
-        }
-
         sliderBarRect = SliderBar.GetComponent<RectTransform>();
         sliderBarMaxWidth = sliderBarRect.rect.width;
         sliderBarHeight = sliderBarRect.rect.height;

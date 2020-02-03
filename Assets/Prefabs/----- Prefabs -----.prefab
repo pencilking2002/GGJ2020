@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 4736258138664118932}
   - component: {fileID: 1112187123}
   m_Layer: 0
-  m_Name: MeterManager
+  m_Name: HealthManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,9 +244,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61876b242751504fbe9861dc9cf5ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: 1
   menuManager: {fileID: 0}
+  sceneManager: {fileID: 1424198559384296003}
   player: {fileID: 0}
+  healthManager: {fileID: 1112187123}
+  gameResolution: {x: 750, y: 1334}
+  gameState: 1
 --- !u!1 &5106024153292046161
 GameObject:
   m_ObjectHideFlags: 0

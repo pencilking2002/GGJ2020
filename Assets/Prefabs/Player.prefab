@@ -163,8 +163,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.9716981, g: 0.96970296, b: 0.8021093, a: 1}
-  m_Intensity: 10
+  m_Color: {r: 1, g: 0.99462366, b: 0.75, a: 1}
+  m_Intensity: 4
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -295,7 +295,7 @@ MonoBehaviour:
   moduleCollider: {fileID: 1093599237}
   leftLimit: {fileID: 0}
   rightLimit: {fileID: 0}
-  playerSpeed: 5
+  playerSpeed: 7
   moveLeft: 6100000014010000
   moveRight: 6400000013010000
   weld: 
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curve: {fileID: 0}
   player: {fileID: 8060191633041156097}
-  threshold: 1.5
+  threshold: 2
   isNearCurve: 0
 --- !u!114 &1142439751
 MonoBehaviour:
@@ -328,9 +328,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b832ed6735409c4bbb61cb070af941a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weldParticles: {fileID: 5883510734883751389}
   spotLight: {fileID: 1617652193}
-  normalIntensity: 3
-  maxflickerIntensity: 10
+  normalIntensity: 1
+  maxflickerIntensity: 4
   minFlickerIntensity: 1
   isFlickering: 0
 --- !u!114 &1403956745
@@ -414,6 +415,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595f788f34c843b4499d3961eb8e9b89, type: 3}
+--- !u!1 &5883510734883751389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1911609305565622, guid: 595f788f34c843b4499d3961eb8e9b89,
+    type: 3}
+  m_PrefabInstance: {fileID: 5881885068429495403}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5885754835672177123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4153511041111432, guid: 595f788f34c843b4499d3961eb8e9b89,
