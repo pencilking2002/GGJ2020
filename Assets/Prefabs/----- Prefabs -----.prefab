@@ -195,9 +195,11 @@ MonoBehaviour:
   playerCurveManager: {fileID: 0}
   SliderBar: {fileID: 0}
   maxHealth: 100
-  gainHealthAmount: 5
+  currentHealth: 0
+  losingHealth: 0
+  gainHealthAmount: 2
   gainHealthTimeInterval: 1
-  loseHealthAmount: 5
+  loseHealthAmount: 8
   loseHealthTimeInterval: 1
 --- !u!1 &4705496963472744318
 GameObject:
@@ -243,6 +245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 1
+  menuManager: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &5106024153292046161
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public enum GameState
 {
@@ -14,6 +12,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameState gameState;
+
+    [Header("Component References")]
+    public MenuManager menuManager;
+    public PlayerController player;
 
     private void Awake()
     {

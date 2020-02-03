@@ -5,27 +5,12 @@ using System;
 
 public class MenuManager : MonoBehaviour
 {
-    public static MenuManager Instance;
     public MenuAnimations menuAnimations;
     public GameObject mainMenu;
     public GameObject gameMenu;
 
     public static Action OnGameStart;
     public static Action OnBackToMenu;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            transform.SetParent(null);
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(this);
-        }        
-    }
 
     private void Update()
     {
