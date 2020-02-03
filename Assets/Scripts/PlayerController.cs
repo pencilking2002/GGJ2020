@@ -56,7 +56,8 @@ public class PlayerController : MonoBehaviour
 
         for(int i = 0; i < moveLeft.Length; i++)
         {
-            if (Input.GetKey(moveLeft[i]))
+            var input = Input.GetAxisRaw("Horizontal");
+            if (input == -1)
             {
                 moveDir = Vector3.left;
                 MovePlayer();
@@ -65,19 +66,20 @@ public class PlayerController : MonoBehaviour
 
         for (int i = 0; i < moveRight.Length; i++)
         {
-            if(Input.GetKey(moveRight[i]))
+            var input = Input.GetAxisRaw("Horizontal");
+            if(input == 1)
             {
                 moveDir = Vector3.right;
                 MovePlayer();
             }
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) || Input.GetButtonDown("Jump"))
         {
             OnWeldStart?.Invoke();
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) || Input.GetButtonUp("Jump"))
         {
             OnWeldStop?.Invoke();
         }
