@@ -1,16 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 
 public class MenuManager : MonoBehaviour
 {
-    public MenuAnimations menuAnimations;
-    public GameObject mainMenu;
-    public GameObject gameMenu;
-
     public static Action OnGameStart;
     public static Action OnBackToMenu;
+    public MenuAnimations menuAnimations;
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject gameMenu;
 
     private void Update()
     {
@@ -19,17 +16,13 @@ public class MenuManager : MonoBehaviour
             HandleGameStart();
         }
     }
-
-    private void OnEnable()
+    
+    private void HandleGameStart()
     {
-        OnGameStart += HandleGameStart;
+        mainMenu.SetActive(false);
+        gameMenu.SetActive(true);
     }
-
-    private void OnDisable()
-    {
-        OnGameStart -= HandleGameStart;
-    }
-
+    
     public void HandleStartButton()
     {
         Debug.Log("Start button pressed");
@@ -37,9 +30,9 @@ public class MenuManager : MonoBehaviour
         OnGameStart?.Invoke();
     }
 
-    private void HandleGameStart()
-    {
-        mainMenu.SetActive(false);
-        gameMenu.SetActive(true);
-    }
+    private void OnEnable() { OnGameStart += HandleGameStart; }
+    private void OnDisable() { OnGameStart -= HandleGameStart; }
+
+
+   
 }
