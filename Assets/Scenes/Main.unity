@@ -755,6 +755,10 @@ PrefabInstance:
       propertyPath: curve
       value: 
       objectReference: {fileID: 535929572}
+    - target: {fileID: 1974523639, guid: d289a58f73c494cec96a1dc72eb5b32b, type: 3}
+      propertyPath: threshold
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1877890501620531817, guid: d289a58f73c494cec96a1dc72eb5b32b,
         type: 3}
       propertyPath: scrollingManager

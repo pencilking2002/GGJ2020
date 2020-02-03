@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public LineDrawing lineDrawer;
     public PlayerModuleCollider moduleCollider;
+    public PlayerCurveManager curveManager;
     [SerializeField] private Transform leftLimit;
     [SerializeField] private Transform rightLimit;
 
@@ -23,7 +24,8 @@ public class PlayerController : MonoBehaviour
     private bool canControlPlayer; //Whether the player can control the player character
 
     [SerializeField] private bool isWelding;
-
+    [SerializeField] private bool isWeldingOnCurve;
+    
     public static Action OnWeldStart;
     public static Action OnWeldStop;
 
@@ -84,10 +86,7 @@ public class PlayerController : MonoBehaviour
             OnWeldStop?.Invoke();
         }
 
-        if(Input.GetKeyDown(KeyCode.Y))
-        {
-            Application.Quit();
-        }
+        isWeldingOnCurve = isWeldingOnCurve && curveManager.isNearCurve;
     }
 
     private void MovePlayer()

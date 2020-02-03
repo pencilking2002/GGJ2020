@@ -9,11 +9,10 @@ public class PlayerCurveManager : MonoBehaviour
     public BGCurve curve;
     private BGCcMath curveMath;
     private List<BGCurve> curvesList = new List<BGCurve>();
-    private List<BGCcMath> curveMathList = new List<BGCcMath>();
-    public PlayerController player;
+    [SerializeField] private List<BGCcMath> curveMathList = new List<BGCcMath>();
     public float threshold = 5.0f;
     public bool isNearCurve;
-
+    private Vector3 closestPoint;
     private void Awake()
     {
         curveMath = curve.GetComponent<BGCcMath>();
@@ -37,6 +36,10 @@ public class PlayerCurveManager : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawSphere(transform.position + Vector3.up * 2, 1.0f);
         }
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(closestPoint, 1.0f);
+
      }
 
     private void Update()
@@ -44,12 +47,24 @@ public class PlayerCurveManager : MonoBehaviour
         if (!GameManager.Instance.IsGameplayState())
             return;
 
-        Vector3 closestPoint = Vector3.zero;
-        for (int i=0; i<curveMathList.Count; i++)
-        {
-            closestPoint = curveMathList[i].Math.CalcPositionByClosestPoint(player.transform.position);
-        }
+        closestPoint = GetClosestPoint();
 
-        isNearCurve = (closestPoint != Vector3.zero && Vector2.Distance(closestPoint, player.transform.position) < threshold);
+        isNearCurve = Vector2.Distance(closestPoint, transform.position) < threshold;
+        Debug.Log(Vector2.Distance(closestPoint, transform.position));
+    }
+
+    private Vector3 GetClosestPoint()
+    {
+        Vector3 closestPoint = default;
+        for (int i=0; i<curveMathList.Count; i++)
+        {   
+            Vector3 point = curveMathList[i].Math.CalcPositionByClosestPoint(transform.position);
+            float currPointDistance = Vector2.Distance(point, transform.position);
+            float currClosestPointDistance = Vector2.Distance(closestPoint, transform.position); 
+
+            if (closestPoint == default || currPointDistance < currClosestPointDistance)
+                closestPoint = point;
+        }
+        return closestPoint;
     }
 }
