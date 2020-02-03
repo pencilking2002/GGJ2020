@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Screen.SetResolution(750, 1334, true);
+
        SetMenuState();
 
         if (Instance == null)
@@ -29,6 +31,15 @@ public class GameManager : MonoBehaviour
         {
             Instance = null;
             Destroy(gameObject);
+        }
+
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 
