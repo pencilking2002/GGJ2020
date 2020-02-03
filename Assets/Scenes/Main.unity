@@ -123,8 +123,9 @@ GameObject:
   - component: {fileID: 151992108}
   - component: {fileID: 151992110}
   - component: {fileID: 151992109}
+  - component: {fileID: 151992111}
   m_Layer: 5
-  m_Name: Image
+  m_Name: RuptureLogo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,6 +185,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151992107}
   m_CullTransparentMesh: 0
+--- !u!225 &151992111
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151992107}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &204644211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -196,10 +209,15 @@ PrefabInstance:
       propertyPath: gameMenu
       value: 
       objectReference: {fileID: 614751868}
+    - target: {fileID: 1711132672745417000, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+        type: 3}
+      propertyPath: ruptureLogo
+      value: 
+      objectReference: {fileID: 151992111}
     - target: {fileID: 1768333139689870592, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
         type: 3}
       propertyPath: m_Name
-      value: Menu
+      value: MenuCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 1768333139689870592, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
         type: 3}
@@ -311,6 +329,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1768333140429050624, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.24056602
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768333140429050624, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.96865904
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768333140429050624, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1768333140429050625, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -350,6 +383,26 @@ PrefabInstance:
     - target: {fileID: 1768333140429050627, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
         type: 3}
       propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768333140429050627, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768333140429050627, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.84705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768333140429050627, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.7797704
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768333140429050627, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+        type: 3}
+      propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1768333140994313330, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
@@ -1238,7 +1291,7 @@ GameObject:
   - component: {fileID: 1749314996}
   - component: {fileID: 1749314995}
   m_Layer: 8
-  m_Name: Main Camera (1)
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

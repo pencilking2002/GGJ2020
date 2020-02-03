@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
 
     public GameObject mainMenu;
     public GameObject gameMenu;
+    [SerializeField] CanvasGroup ruptureLogo;
 
     public static Action OnGameStart;
     public static Action OnBackToMenu;
@@ -25,6 +26,28 @@ public class MenuManager : MonoBehaviour
         {
             Destroy(this);
         }
+        
+        AnimateLogo();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Jump"))
+        {
+            HandleGameStart();
+        }
+    }
+
+    private void AnimateLogo()
+    {
+        ruptureLogo.alpha = 0.0f;
+        LeanTween.delayedCall(1.0f, () => {
+            var targetPos = ruptureLogo.transform.position;
+            ruptureLogo.transform.position -= Vector3.up * 20.0f;
+
+            LeanTween.move(ruptureLogo.gameObject, targetPos, 1.0f).setEaseOutExpo();
+            LeanTween.alphaCanvas(ruptureLogo, 0.8f, 1.0f);
+        });
     }
 
     private void OnEnable()
