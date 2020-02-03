@@ -26,7 +26,10 @@ public class PlayerCurveManager : MonoBehaviour
 
      private void OnDrawGizmos()
      {
-        if (!GameManager.Instance.IsGameplayState() || !Application.isPlaying)
+        if (!Application.isPlaying)
+            return;
+
+        if (!GameManager.Instance.IsGameplayState())
             return;
 
         if (isNearCurve)
