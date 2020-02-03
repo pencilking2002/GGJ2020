@@ -112,6 +112,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &127846932 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1768333140429050638, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+    type: 3}
+  m_PrefabInstance: {fileID: 204644211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &127846937
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127846932}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &151992107
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +232,11 @@ PrefabInstance:
       propertyPath: ruptureLogo
       value: 
       objectReference: {fileID: 151992111}
+    - target: {fileID: 1711132672745417000, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+        type: 3}
+      propertyPath: menuAnimations
+      value: 
+      objectReference: {fileID: 236710816}
     - target: {fileID: 1768333139689870592, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
         type: 3}
       propertyPath: m_Name
@@ -405,6 +428,11 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1768333140429050638, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+        type: 3}
+      propertyPath: m_Name
+      value: StartButton
+      objectReference: {fileID: 0}
     - target: {fileID: 1768333140994313330, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
         type: 3}
       propertyPath: m_IsActive
@@ -526,6 +554,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e29afb1bcbb8c194b993e7821e2f88dd, type: 3}
+--- !u!1 &236710815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1768333139689870592, guid: e3bc1e6cd46e74cd998cd9c1605e3a77,
+    type: 3}
+  m_PrefabInstance: {fileID: 204644211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &236710816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236710815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe3c832671376a46ba246355790fac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ruptureLogo: {fileID: 151992111}
+  startButton: {fileID: 127846937}
+  animDelay: 0.5
+  animTime: 1
 --- !u!1001 &359377259
 PrefabInstance:
   m_ObjectHideFlags: 0
