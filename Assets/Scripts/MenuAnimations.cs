@@ -25,7 +25,7 @@ public class MenuAnimations : MonoBehaviour
             ruptureLogo.transform.position -= Vector3.up * 20.0f;
 
             LeanTween.move(ruptureLogo.gameObject, targetPos, animTime).setEaseOutExpo();
-            LeanTween.alphaCanvas(ruptureLogo, 0.8f, animTime).setEaseInOutExpo().setOnComplete(() => {
+            LeanTween.alphaCanvas(ruptureLogo, 1.0f, animTime).setEaseInOutExpo().setOnComplete(() => {
                 // Fade in the start button
                 LeanTween.alphaCanvas(startButton, 1.0f, animTime * 0.5f);
             });
