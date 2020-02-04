@@ -9,7 +9,9 @@ public class PlayerCurveManager : MonoBehaviour
     private BGCcMath curveMath;
     private List<BGCurve> curvesList = new List<BGCurve>();
     public List<BGCcMath> curveMathList = new List<BGCcMath>();
+    public List<LineRenderer> lineRendererList = new List<LineRenderer>();
     public BGCcMath closestMathCurve;
+    public LineRenderer closestLineRenderer;
     public float threshold = 5.0f;
     public bool isNearCurve;
     private Vector3 closestPoint;
@@ -22,26 +24,29 @@ public class PlayerCurveManager : MonoBehaviour
 
         foreach(var curve in curvesList)
             curveMathList.Add(curve.GetComponent<BGCcMath>());
+
+        foreach(var curve in curvesList)
+            lineRendererList.Add(curve.GetComponent<LineRenderer>());
     }
 
-     private void OnDrawGizmos()
-     {
-        if (!Application.isPlaying)
-            return;
+    //  private void OnDrawGizmos()
+    //  {
+    //     if (!Application.isPlaying)
+    //         return;
 
-        if (!GameManager.Instance.IsGameplayState())
-            return;
+    //     if (!GameManager.Instance.IsGameplayState())
+    //         return;
 
-        if (isNearCurve)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(transform.position + Vector3.up * 2, 1.0f);
-        }
+    //     if (isNearCurve)
+    //     {
+    //         Gizmos.color = Color.red;
+    //         Gizmos.DrawSphere(transform.position + Vector3.up * 2, 1.0f);
+    //     }
 
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(closestPoint, 1.0f);
+    //     Gizmos.color = Color.yellow;
+    //     Gizmos.DrawSphere(closestPoint, 1.0f);
 
-     }
+    //  }
 
     private void Update()
     {
@@ -68,6 +73,7 @@ public class PlayerCurveManager : MonoBehaviour
             {
                 closestPoint = point;
                 closestMathCurve = curveMathList[i];
+                closestLineRenderer = lineRendererList[i];
             }
         }
         return closestPoint;
