@@ -84,4 +84,24 @@ public class LineDrawing : MonoBehaviour
         PlayerController.OnWeldStart -= StartDrawing;
         PlayerController.OnWeldStop -= StopDrawing;
     }
+
+    private void OnDrawGizmos()
+    {
+         if (!Application.isPlaying)
+            return;
+
+        if (!GameManager.Instance.IsGameplayState())
+            return;
+
+        var curveManager = GameManager.Instance.player.curveManager;
+        if (curveManager.isNearCurve)
+        {
+            Gizmos.color = Color.green;
+            for (int i=0; i<curveManager.curveMathList.Count; i++)
+            { 
+                //if (curveManager.curveMathList[i].SectionParts[0])
+            }
+            //Gizmos.DrawSphere(transform.position + Vector3.up * 2, 1.0f);
+        }
+    }
 }

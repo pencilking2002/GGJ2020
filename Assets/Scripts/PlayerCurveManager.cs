@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using BansheeGz.BGSpline.Curve;
 using BansheeGz.BGSpline.Components;
@@ -9,7 +8,7 @@ public class PlayerCurveManager : MonoBehaviour
     public BGCurve curve;
     private BGCcMath curveMath;
     private List<BGCurve> curvesList = new List<BGCurve>();
-    [SerializeField] private List<BGCcMath> curveMathList = new List<BGCcMath>();
+    public List<BGCcMath> curveMathList = new List<BGCcMath>();
     public float threshold = 5.0f;
     public bool isNearCurve;
     private Vector3 closestPoint;
@@ -56,6 +55,7 @@ public class PlayerCurveManager : MonoBehaviour
     private Vector3 GetClosestPoint()
     {
         Vector3 closestPoint = default;
+        
         for (int i=0; i<curveMathList.Count; i++)
         {   
             Vector3 point = curveMathList[i].Math.CalcPositionByClosestPoint(transform.position);
@@ -67,4 +67,13 @@ public class PlayerCurveManager : MonoBehaviour
         }
         return closestPoint;
     }
+
+    // private BGCcMath GetClosestCurveMath()
+    // {
+    //     BGCcMath curveMath;
+    //     for (int i=0; i<curveMathList.Count; i++)
+    //     {
+
+    //     }
+    // }
 }
