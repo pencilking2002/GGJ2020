@@ -93,15 +93,20 @@ public class LineDrawing : MonoBehaviour
         if (!GameManager.Instance.IsGameplayState())
             return;
 
-        var curveManager = GameManager.Instance.player.curveManager;
-        if (curveManager.isNearCurve)
+        var mathCurve = GameManager.Instance.player.curveManager.closestMathCurve.Math;
+        if (GameManager.Instance.player.isWeldingOnCurve)
         {
-            Gizmos.color = Color.green;
-            for (int i=0; i<curveManager.curveMathList.Count; i++)
-            { 
-                //if (curveManager.curveMathList[i].SectionParts[0])
+            Gizmos.color = Color.white;
+            for(int sIndex=0; sIndex<mathCurve.SectionsCount; sIndex++)
+            {
+                for(int pIndex=0; pIndex < mathCurve.SectionInfos[sIndex].PointsCount; pIndex++)
+                {
+                    if (mathCurve.SectionInfos[sIndex].points[pIndex].Position.y > transform.position.y)
+                    {
+                        Gizmos.DrawSphere(mathCurve.SectionInfos[sIndex].points[pIndex].Position, 1.0f);
+                    }
+                }
             }
-            //Gizmos.DrawSphere(transform.position + Vector3.up * 2, 1.0f);
         }
     }
 }

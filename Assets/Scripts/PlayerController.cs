@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool canControlPlayer; //Whether the player can control the player character
 
     [SerializeField] private bool isWelding;
-    [SerializeField] private bool isWeldingOnCurve;
+    public bool isWeldingOnCurve;
     
     public static Action OnWeldStart;
     public static Action OnWeldStop;
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
             OnWeldStop?.Invoke();
         }
 
-        isWeldingOnCurve = isWeldingOnCurve && curveManager.isNearCurve;
+        isWeldingOnCurve = isWelding && curveManager.isNearCurve;
     }
 
     private void MovePlayer()

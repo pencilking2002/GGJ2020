@@ -9,9 +9,11 @@ public class PlayerCurveManager : MonoBehaviour
     private BGCcMath curveMath;
     private List<BGCurve> curvesList = new List<BGCurve>();
     public List<BGCcMath> curveMathList = new List<BGCcMath>();
+    public BGCcMath closestMathCurve;
     public float threshold = 5.0f;
     public bool isNearCurve;
     private Vector3 closestPoint;
+    
     private void Awake()
     {
         curveMath = curve.GetComponent<BGCcMath>();
@@ -49,7 +51,7 @@ public class PlayerCurveManager : MonoBehaviour
         closestPoint = GetClosestPoint();
 
         isNearCurve = Vector2.Distance(closestPoint, transform.position) < threshold;
-        Debug.Log(Vector2.Distance(closestPoint, transform.position));
+//        Debug.Log(Vector2.Distance(closestPoint, transform.position));
     }
 
     private Vector3 GetClosestPoint()
@@ -63,7 +65,10 @@ public class PlayerCurveManager : MonoBehaviour
             float currClosestPointDistance = Vector2.Distance(closestPoint, transform.position); 
 
             if (closestPoint == default || currPointDistance < currClosestPointDistance)
+            {
                 closestPoint = point;
+                closestMathCurve = curveMathList[i];
+            }
         }
         return closestPoint;
     }
