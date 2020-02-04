@@ -22,14 +22,14 @@ public class LineDrawing : MonoBehaviour
 
         set {}
     }
-    public List<Vector3> pointList;
+    //public List<Vector3> pointList;
     [SerializeField] private float pointAddedInterval = 0.1f;
     [SerializeField] private float maxTrailLength = 4.0f;         // How long is the feedback welding trail
     [SerializeField] private float currTrailLength = 0.0f;
     [SerializeField] private float trailLerpSpeed = 5.0f;
     private float pointAddedTime;
 
-    private void Update()
+    private void LateUpdate()
     {
         DrawLine();
     }
@@ -45,56 +45,28 @@ public class LineDrawing : MonoBehaviour
 
         if (GameManager.Instance.player.isWeldingOnCurve)
         {
-            pointList.Clear();
             currLine.positionCount = 0;
-            // currLine.positionCount = 1;
-            // currLine.SetPosition(0, transform.position);
 
             currTrailLength = Mathf.Lerp(currTrailLength, maxTrailLength, trailLerpSpeed * Time.deltaTime);
             
-            // for(int sIndex=0; sIndex<mathCurve.SectionsCount; sIndex++)
-            // {
-            //     var section = mathCurve.SectionInfos[sIndex];
-            //     for(int pIndex=0; pIndex < section.PointsCount; pIndex++)
-            //     {
-            //         if (section.points[pIndex].Position.y > transform.position.y && 
-            //             section.points[pIndex].Position.y < transform.position.y + currTrailLength)
-            //         {
-            //             var linePoint = section.points[pIndex].Position;
-            //             linePoint.z -= 0.1f;
-            //             pointList.Add(linePoint);
-            //             currLine.positionCount = pointList.Count;
-            //             currLine.SetPosition(pointList.Count-1, linePoint);
-            //         }
-            //     }
-            // }
-
-            // currLine.positionCount = pointList.Count;
-            // currLine.SetPositions(pointList.ToArray());
             for (int i=0; i<closestLineRenderer.positionCount; i++)
             {
                 Vector3 linePoint = closestLineRenderer.GetPosition(i);
 
                 if (linePoint.y > transform.position.y && linePoint.y < transform.position.y + currTrailLength)
                 {
-                    //var linePoint = section.points[pIndex].Position;
                     linePoint.z -= 0.1f;
-                    pointList.Add(linePoint);
-                    currLine.positionCount = pointList.Count;
-                    currLine.SetPosition(pointList.Count-1, linePoint);
+                    currLine.positionCount = currLine.positionCount+1;
+                    currLine.SetPosition(currLine.positionCount-1, linePoint);
+                    
                 }
             }
         }
         else
         {
-            currTrailLength = Mathf.Lerp(currTrailLength, 0.0f, trailLerpSpeed * Time.deltaTime);
-            //if (currLine != null)
-            //{
-                //Destroy(currLine.gameObject);
-                currLine.positionCount = 0;
-                //currLine = null;
-                //pointList.Clear();
-            //}
+            currTrailLength = Mathf.Lerp(currTrailLength, 0.0f, trailLerpSpeed * Time.deltaTime); 
+            currLine.positionCount = 0;
+
         }
         
     }

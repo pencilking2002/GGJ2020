@@ -72,7 +72,7 @@ public class HealthManager : MonoBehaviour
         {
             GainHealth();
             gainHealthTimeRef = Time.time;
-            Debug.Log("Gaiing health");
+//            Debug.Log("Gaiing health");
         }
     }
 

@@ -54,7 +54,7 @@ public class ScrollingManager : MonoBehaviour
             }
         }
 
-        Debug.Log("Deepest: " + deepestCollider.name);
+//        Debug.Log("Deepest: " + deepestCollider.name);
         return deepestCollider;
     }
 }
