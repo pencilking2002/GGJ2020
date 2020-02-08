@@ -15,7 +15,7 @@ public class ScrollingManager : MonoBehaviour
         foreach(Transform t in transform)
         {
             if (t.gameObject.activeInHierarchy)
-                modules.Add(t.GetComponent<BoxCollider>());
+                modules.Add(t.GetComponent<Collider>());
         }
     }
     private void Update()

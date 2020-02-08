@@ -5,16 +5,16 @@ using UnityEngine;
 public class OceanScroll : MonoBehaviour
 {
     public ScrollingManager scrollingManager;
-    public float destroyDelay = 10.0f;
+    public float stopAfter = 10.0f;
 
     private void Awake()
     {
-//        Destroy(gameObject, destroyDelay);
+
     }
 
     private void Update()
     {
-         if (GameManager.Instance.IsMenuState())
+         if (GameManager.Instance.IsMenuState() || Time.timeSinceLevelLoad > stopAfter)
             return;
 
         var pos = transform.position;
