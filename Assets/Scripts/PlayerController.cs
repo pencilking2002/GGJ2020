@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
             OnWeldStop?.Invoke();
         }
 
-        isWeldingOnCurve = isWelding && curveManager.isNearCurve;
+        isWeldingOnCurve = isWelding && curveManager.isNearCurve && moduleCollider.isColliding;
     }
 
     private void MovePlayer()

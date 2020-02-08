@@ -234,6 +234,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Window_V1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5199085727712647565, guid: d4eb4b498be133641b87c97f6155d072,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4eb4b498be133641b87c97f6155d072, type: 3}
 --- !u!4 &6876042741522177976 stripped
@@ -319,6 +324,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Window_V1
       objectReference: {fileID: 0}
+    - target: {fileID: 5199085727712647565, guid: d4eb4b498be133641b87c97f6155d072,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4eb4b498be133641b87c97f6155d072, type: 3}
 --- !u!4 &666138232353564207 stripped
@@ -403,6 +413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Window_V1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5199085727712647565, guid: d4eb4b498be133641b87c97f6155d072,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4eb4b498be133641b87c97f6155d072, type: 3}
