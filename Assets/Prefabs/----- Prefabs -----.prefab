@@ -248,6 +248,7 @@ MonoBehaviour:
   sceneManager: {fileID: 1424198559384296003}
   player: {fileID: 0}
   healthManager: {fileID: 1112187123}
+  camShake: {fileID: 0}
   gameResolution: {x: 750, y: 1334}
   gameState: 1
 --- !u!1 &5106024153292046161

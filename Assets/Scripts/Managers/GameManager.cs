@@ -17,6 +17,8 @@ public partial class GameManager : MonoBehaviour
     public GameSceneManager sceneManager;
     public PlayerController player;
     public HealthManager healthManager;
+    public CameraShake camShake;
+
     [SerializeField] private Vector2 gameResolution = new Vector2(750, 1334);
 
     private void Awake()

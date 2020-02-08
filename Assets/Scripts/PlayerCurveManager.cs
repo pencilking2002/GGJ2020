@@ -5,7 +5,6 @@ using BansheeGz.BGSpline.Components;
 
 public class PlayerCurveManager : MonoBehaviour
 {
-    public BGCurve curve;
     private BGCcMath curveMath;
     private List<BGCurve> curvesList = new List<BGCurve>();
     public List<BGCcMath> curveMathList = new List<BGCcMath>();
@@ -18,7 +17,6 @@ public class PlayerCurveManager : MonoBehaviour
     
     private void Awake()
     {
-        curveMath = curve.GetComponent<BGCcMath>();
         var curveArr = GameObject.FindObjectsOfType<BGCurve>();
         curvesList.AddRange(curveArr);
 
@@ -53,16 +51,13 @@ public class PlayerCurveManager : MonoBehaviour
         if (!GameManager.Instance.IsGameplayState())
             return;
 
-        closestPoint = GetClosestPoint();
-
+        GetClosestPoint();
         isNearCurve = Vector2.Distance(closestPoint, transform.position) < threshold;
-//        Debug.Log(Vector2.Distance(closestPoint, transform.position));
     }
 
-    private Vector3 GetClosestPoint()
+    private void GetClosestPoint()
     {
-        Vector3 closestPoint = default;
-        
+        closestPoint = default;
         for (int i=0; i<curveMathList.Count; i++)
         {   
             Vector3 point = curveMathList[i].Math.CalcPositionByClosestPoint(transform.position);
@@ -76,15 +71,5 @@ public class PlayerCurveManager : MonoBehaviour
                 closestLineRenderer = lineRendererList[i];
             }
         }
-        return closestPoint;
     }
-
-    // private BGCcMath GetClosestCurveMath()
-    // {
-    //     BGCcMath curveMath;
-    //     for (int i=0; i<curveMathList.Count; i++)
-    //     {
-
-    //     }
-    // }
 }

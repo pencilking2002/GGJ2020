@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LineDrawing : MonoBehaviour
 {
-    public ScrollingManager scrollingManager;
+    [SerializeField] Transform weldPoint;
     public LineRenderer lrPrefab;
     private LineRenderer _currLine;
     public LineRenderer currLine
@@ -53,7 +53,7 @@ public class LineDrawing : MonoBehaviour
             {
                 Vector3 linePoint = closestLineRenderer.GetPosition(i);
 
-                if (linePoint.y > transform.position.y && linePoint.y < transform.position.y + currTrailLength)
+                if (linePoint.y > weldPoint.position.y && linePoint.y < weldPoint.position.y + currTrailLength)
                 {
                     linePoint.z -= 0.1f;
                     currLine.positionCount = currLine.positionCount+1;
@@ -92,7 +92,7 @@ public class LineDrawing : MonoBehaviour
     //     var mathCurve = GameManager.Instance.player.curveManager.closestMathCurve.Math;
     //     if (GameManager.Instance.player.isWeldingOnCurve)
     //     {
-            
+
     //         Gizmos.color = Color.white;
     //         currTrailLength = Mathf.Lerp(currTrailLength, maxTrailLength, trailLerpSpeed * Time.deltaTime);
 
@@ -101,8 +101,8 @@ public class LineDrawing : MonoBehaviour
     //             var section = mathCurve.SectionInfos[sIndex];
     //             for(int pIndex=0; pIndex < section.PointsCount; pIndex++)
     //             {
-    //                 if (section.points[pIndex].Position.y > transform.position.y && 
-    //                     section.points[pIndex].Position.y < transform.position.y + currTrailLength)
+    //                 if (section.points[pIndex].Position.y  >weldPoint.position.y && 
+    //                     section.points[pIndex].Position.y < weldPoint.position.y + currTrailLength)
     //                 {
     //                     Gizmos.DrawSphere(section.points[pIndex].Position, 1.0f);
     //                 }
