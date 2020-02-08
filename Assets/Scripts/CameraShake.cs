@@ -25,16 +25,11 @@ public class CameraShake : MonoBehaviour
         if (GameManager.Instance.player.isWeldingOnCurve)
         {
             if (initPos == default)
-                initPos = transform.position;
+                initPos = transform.localPosition;
 
             Vector3 newPos = initPos + Random.insideUnitSphere * shakeAmount;
             newPos.z = initPos.z;
-            transform.position = newPos;
-        }
-        else
-        {
-           // transform.position = initPos; //Set the local rotation to 0 when done, just to get rid of any fudging stuff.
-
+            transform.localPosition = newPos;
         }
     }
 

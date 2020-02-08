@@ -165,7 +165,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.99462366, b: 0.75, a: 1}
   m_Intensity: 4
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -296,7 +296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b917b0e57938345a7d1c4b800f1b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curve: {fileID: 0}
   curveMathList: []
   lineRendererList: []
   closestMathCurve: {fileID: 0}
@@ -318,8 +317,8 @@ MonoBehaviour:
   weldParticles: {fileID: 5883510734883751389}
   spotLight: {fileID: 1617652193}
   normalIntensity: 1
-  maxflickerIntensity: 4
-  minFlickerIntensity: 1
+  maxflickerIntensity: 3
+  minFlickerIntensity: 1.5
   isFlickering: 0
 --- !u!114 &1403956745
 MonoBehaviour:
@@ -355,6 +354,19 @@ MonoBehaviour:
   maxTrailLength: 6
   currTrailLength: 0
   trailLerpSpeed: 1.5
+--- !u!114 &1720908373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8713633164937969548}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18adba71d00870a4d9bb8f5131ef3248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeAmount: 0.03
 --- !u!1001 &5881885068429495403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -498,6 +510,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3da18b483675fda4bb3d218d5f5c395a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95dfb778517c72349b2630fb6243bf94, type: 3}
+--- !u!1 &8713633164937969548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 95dfb778517c72349b2630fb6243bf94,
+    type: 3}
+  m_PrefabInstance: {fileID: 8713633164938000684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8713633164938388396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 95dfb778517c72349b2630fb6243bf94,
