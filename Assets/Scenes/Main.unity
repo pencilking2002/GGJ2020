@@ -2800,10 +2800,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1360211734, guid: 543c4b4234716ea498d764e0c8fea487, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2483.0706
+      objectReference: {fileID: 0}
     - target: {fileID: 1664124651, guid: 543c4b4234716ea498d764e0c8fea487, type: 3}
       propertyPath: scrollingManager
       value: 
       objectReference: {fileID: 1005626447}
+    - target: {fileID: 5023293681003797077, guid: 543c4b4234716ea498d764e0c8fea487,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 89
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023293681003797077, guid: 543c4b4234716ea498d764e0c8fea487,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 118.8427
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023293681182696424, guid: 543c4b4234716ea498d764e0c8fea487,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 132
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023293681182696424, guid: 543c4b4234716ea498d764e0c8fea487,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1372.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023293681182696424, guid: 543c4b4234716ea498d764e0c8fea487,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7445.287
+      objectReference: {fileID: 0}
     - target: {fileID: 5023293682136850186, guid: 543c4b4234716ea498d764e0c8fea487,
         type: 3}
       propertyPath: m_Name

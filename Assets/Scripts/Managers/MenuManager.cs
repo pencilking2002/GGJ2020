@@ -18,6 +18,11 @@ public class MenuManager : MonoBehaviour
         {
             OnPressStartButton();
         }
+
+        if (GameManager.Instance.IsGameoverState() && (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Jump")))
+        {
+            OnPressRestartButton();
+        }
     }
     
     private void HandleGameStart()
