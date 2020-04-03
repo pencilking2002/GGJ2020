@@ -9,7 +9,7 @@ public class AudioController : MonoBehaviour
 
     private AudioSource audioSource;
 
-    private void Awake()
+    private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = menuMusicClip;
